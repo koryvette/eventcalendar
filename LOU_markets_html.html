@@ -9,14 +9,12 @@
     <title>What's up Louisville?</title>
      	<link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/flex.css">
-
   </head>
   <body>
 
     <header id="top" class="main-header">
-      	<div class="container clearfix">
         <ul class="main-nav">
-          <li class="menu_options"><a href="index.html">Home</a></li>
+          <li class="menu_options"><a href="LOU_html.html">Home</a></li>
           <li class="menu_options"><a href="LOU_Sports_html.html">Sports</a></li>
           <li class="menu_options"><a href="LOU_festival_html.html">Festivals</a></li>
           <li class="menu_options"><a href="LOU_foodie_html.html">Foodie</a></li>
@@ -32,7 +30,7 @@
     </div><!--/.banner-->
 
     <div class="container">
-    <div class="categories"> <!-- menu options div -->
+    <div class="categories col"> <!-- menu options div -->
     <!--<button type="submit" class="menu_options"><a href="LOU_html.html">Home</a></button> -->
     <p class="locations"><a href="LOU_html.html">Home</a></p>
     <p class="locations"><a href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></p>
@@ -41,23 +39,21 @@
     <p class="locations"><a href="http://www.louisvillepalace.com/" target="_blank">Palace Theatre</a></p>
     <p class="locations"><a href="https://louisvillewaterfront.com/" target="_blank">Waterfront Park</a></p>
 
-    <p class="menu_options"><a href=""> </a></p>
-    <p class="menu_options"><a href=""> </a></p>
-    <p class="menu_options"><a href=""> </a></p>
+  </div> <!-- end of categories div -->
 
+   <div class ="interested"> <!--beginning of cart -->
+   <div id="user-label" class="badge"># of events</div>
+   <span id="user-check">0</span>
+     </div>   <!--end of cart -->
 
+<div class="primary_list col">
 
-    </div> <!-- end of menu options div -->
-
-
-
-<div class="primary_list">
 
 <div class="main_content">
 <h1 class="event-type"><strong>Markets</strong></h1>
 <caption> Got money burning a whole int your pocket?  Or just like to window shop?  Check out some of the local markets around the Ville.</caption>
 <p class="sub_cat">Farmer's Markets</p>
-<table style="width:70%">
+<table>
 <tr>
   <th class = "ID_heading heading">ID</th>
   <th class = "event_heading heading" >Event Name</th>
@@ -72,7 +68,7 @@
 </tr>
 </table>
 <p  class="sub_cat">Pop-up markets</p>
-<table style="width:70%">
+<table>
 <tr>
   <th class = "ID_heading heading">ID</th>
   <th class = "event_heading heading" >Event Name</th>
@@ -86,11 +82,11 @@
   <th class = "type_heading heading">Event Type</th>
 </tr>
 </table>
-</div>
 
-	</div>
-	<br>
-	<br>
+  </div> <!-- end main-content div -->
+ </div> <!-- end primary_list div -->
+</div> <!--container end-->
+
 <footer class="main_footer">
  <p>Don't see your event?  Click <a href="F:\Kory\coding\LOU\submit_form.html" target="blank">HERE</a></p>
 	</footer>
