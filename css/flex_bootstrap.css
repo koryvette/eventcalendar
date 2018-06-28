@@ -255,3 +255,35 @@ table{
     height: 100px;
     align-items:
 }
+
+
+
+/*========= media queries ------------------ */
+@media (min-width: 300px) {
+.container{
+  flex-direction: column;
+}
+
+.categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  order: 1;
+  }
+  .primary_list{
+    order: -1;
+  }
+}
+
+
+@media (min-width: 1025px) {
+.container{
+  flex-direction: row;
+}
+.categories{
+  flex-direction: column;
+  justify-content: flex-start;
+  order: -1;
+  }
+}
