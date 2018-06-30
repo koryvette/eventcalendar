@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>What's Up Louisville?</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/flex_bootstrap.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="script/LOU_JS.js"></script>
 
 </head>
 <body class="bg-danger text-white">
@@ -58,27 +59,27 @@ crossorigin="anonymous">
 </nav>
 <!--navigation bar end-->
 <!--jumbotron-->
-<div class="jumbotron jumbotron-fluid">
+<div id="banner" class="jumbotron jumbotron-fluid">
   <div class="container text-sm-center pt-3">
-    <h1 class="display-4 title">What's up LOUISVILLE?</h1>
+
+   <h1 class="display-4 title">What's up LOUISVILLE?</h1>
     <p class="lead">Your source for what's going on in Louisville.</p>
     <br>
   <br>
     <br>
       <br>
   </div>
+ </div>
 </div>
 <!--end jumbotron-->
 <div>
 <p class="intro text-sm-center pt-1">What's up Louisville?  We've scoured the internet and compiled a list of what's up in Louisville.  Don't sit home wondering what events are happening around you. </p>
 </div>
 
-<div class="container-fluid ml-4">
+<div class="container-fluid">
   <div class="row align-items-start">
-    <div class="categories col-">
-      <p class="locations home">For more info on</p>
-      <p class="locations home">on these events,
-      <p class="locations home">check out these links:</p>
+    <div class="categories col-  ml-4">
+      <p class="locations home">Check out these links:</p>
       <p class="locations fourth"><a href="http://www.4thstlive.com/" target="_blank">4th Street Live</a></p>
       <p class="locations churchill"><a href="https://www.churchilldowns.com/" target="_blank">Churchill Downs</a></p>
       <p class="locations comedy"><a href="http://www.laughingderby.com/home" target="_blank">Comedy Caravan</a></p>
@@ -97,14 +98,19 @@ crossorigin="anonymous">
       <p class="locations waylon"><a href="https://waylonslouisville.com/" target="_blank">Waylon's Feed</a></p>
       <p class="locations library"><a href="http://lfpl.org/" target="_blank">Public Library</a></p>
 
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Sports venues</button>
-   <div id="demo" class="collapse">
-      <p id="demo" class="collapse locations slugger"><a href="https://www.milb.com/louisville" target="_blank">Slugger Field</a></p>
-      <p id="demo" class="collapse locations gocards"><a href="http://gocards.com/index.aspx" target="_blank">University of Louisville</a></p>
-      <p id="demo" class="collapse locations dragway"><a href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></p>
-   </div>
- </div>
+    <div class="accordion">
+      <section id="menu1">
+        <a href="#menu1">Sports venues</h1>
+             <p id="demo" class="collapse locations"><a href="https://www.milb.com/louisville" target="_blank">Slugger Field</a></p>
+             <p id="demo" class="collapse locations"><a href="http://gocards.com/index.aspx" target="_blank">University of Louisville</a></p>
+             <p id="demo" class="collapse locations"><a href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></p>
+        </section>
+        <section id="menu2">
+          <a href="#menu2">Live Event venues</h1>
+          <p class="locations"><a href="https://waylonslouisville.com/" target="_blank">Waylon's Feed</a></p>
+        </div>
 
+ </div>
 
  <div class="col">
    <div class="main_content">  <!--beginning of main webpage content -->
@@ -318,9 +324,9 @@ crossorigin="anonymous">
 
 
         <div class="col-md-4 d-none d-lg-block">
-          <div class="thumbnail">
+          <div class="thumbnail featured">
             <a href="https://www.kfcyumcenter.com" target="_blank">
-              <img  src="img/featured/EddieGriffin.png" class="img-rounded .img-responsive" alt="Eddie Griffin" style="width:80%">
+              <img  src="img/featured/EddieGriffin.jpg" class="img-rounded .img-responsive" alt="Eddie Griffin" style="width:80%">
               <div class="caption">
                 <p>See Eddie Griffin live!!</p>
               </div>
@@ -346,10 +352,8 @@ crossorigin="anonymous">
 
 
 <footer class="main_footer bg-dark">
- <span>Don't see your event?  Click <a href="submit_form.html" target="blank">  HERE</a></span>
+ <span class="footer">Don't see your event?  Click <a href="submit_form.html" target="blank">  HERE</a></span>
 	</footer>
-
-<script src="script/LOU_JS.js"></script>
 
 </body>
 </html>
