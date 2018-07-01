@@ -328,6 +328,8 @@ section:target p{
 @media (min-width: 1025px) {
 .container{
   flex-direction: row;
+  padding: 0;
+  margin:0;
 }
 .categories{
   flex-direction: column;
