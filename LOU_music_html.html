@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>What's Up Louisville?</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/flex_bootstrap.css">
+
+<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script type="text/javascript" src="script/LOU_JS.js"></script>
+
 </head>
 <body class="bg-danger text-white">
-<!--navigation bar-->
+
+<!--  navigation bar  -------------->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -48,14 +54,15 @@ crossorigin="anonymous">
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </div>
 </nav>
-<!--navigation bar end-->
-<!--jumbotron-->
-<div class="jumbotron jumbotron-fluid">
+<!--  navigation bar end  ------------>
+
+<!--  jumbotron  --------------------->
+<div id="banner" class="jumbotron jumbotron-fluid">
   <div class="container text-sm-center pt-3">
     <h1 class="display-4 title">What's up LOUISVILLE?</h1>
     <p class="lead">Your source for what's going on in Louisville.</p>
@@ -65,7 +72,7 @@ crossorigin="anonymous">
       <br>
   </div>
 </div>
-<!--end jumbotron-->
+<!--  end jumbotron  ------------------>
 <div>
 <p class="intro text-sm-center pt-1">What's up Louisville?  We've scoured the internet and compiled a list of what's up in Louisville.  Don't sit home wondering what events are happening around you. </p>
 </div>
@@ -73,9 +80,9 @@ crossorigin="anonymous">
     <div class="container-fluid ml-4">
       <div class="row align-items-start">
         <div class="categories col-">
- <!-- menu options div -->
-    <!--<button type="submit" class="menu_options"><a href="LOU_html.html">Home</a></button> -->
-    <p class="locations"><a href="LOU_html.html">Home</a></p>
+ <!-- menu options div  ---------------->
+
+    <p class="locations home bg-danger text-white">Check out these links:</p>
     <p class="locations fourth"><a href="http://www.4thstlive.com/" target="_blank">4th Street Live</a></p>
     <p class="locations churchill"><a href="https://www.churchilldowns.com/" target="_blank">Churchill Downs</a></p>
     <p class="locations comedy"><a href="http://www.laughingderby.com/home" target="_blank">Comedy Caravan</a></p>
@@ -95,7 +102,7 @@ crossorigin="anonymous">
     <p class="locations library"><a href="http://lfpl.org/" target="_blank">Public Library</a></p>
 
 
-  </div> <!-- end of categories div -->
+  </div> <!-- end of categories div ------>
 
 <div class="col">
 <div class="main_content">
@@ -103,7 +110,7 @@ crossorigin="anonymous">
 <caption> There's always something going on.  Check out this list of concert, live music and other events going on.</caption>
 
 <p class="sub_cat">Concerts</p>
-<table>
+<table class = "event_table bg-secondary">
 <tr>
   <th class = "event_heading heading">Event Name</th>
   <th class = "venue_heading heading">Venue</th>
@@ -117,7 +124,7 @@ crossorigin="anonymous">
 </table>
 
 <p class="sub_cat">Live music and other events</p>
-<table>
+<table class = "event_table bg-secondary">
 <tr>
   <th class = "event_heading heading" >Event Name</th>
   <th class = "venue_heading heading">Venue</th>
@@ -131,7 +138,7 @@ crossorigin="anonymous">
 </table>
 
 <p  class="sub_cat">Theater</p>
-<table>
+<table class = "event_table bg-secondary">
 <tr>
   <th class = "event_heading heading" >Event Name</th>
   <th class = "venue_heading heading">Venue</th>
@@ -162,22 +169,206 @@ crossorigin="anonymous">
                 <p>See Maroon 5 live!!</p>
               </div>
             </a>
+
           </div>
         </div>
-
-
-
       </div> <!--container end-->
+
     </div>
 </div>
 
 
 
-<footer class="main_footer bg-dark">
- <span>Don't see your event?  Click <a href="submit_form.html" target="blank">  HERE</a></span>
-	</footer>
+<!--    FOOOTER ---------------------->
 
-<script src="script/LOU_JS.js"></script>
+<footer class="main_footer bg-dark">
+ <span class="footer">Don't see your event?  Click   <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newevent">HERE</button>
+
+ </footer>
+
+<!--    FORM MODAL ------------------->
+<div class="modal fade" id="newevent" tabindex="-1" role="dialog" aria-labelledby="newevent" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title" id="createEvent">New Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><!-- New Event form  ------->
+
+<form>
+  <div class="form-group"><!-- Event name  ------->
+    <label class="form_heading" for="formGroupExampleInput">Event Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Event Name">
+  </div>
+  <div class="form-group"><!-- Where event is located  -->
+    <label class="form_heading" for="formGroupExampleInput2">Venue</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Event Venue">
+  </div>
+
+<div class="form-row"><!-- When is event ------->
+ <label class="col-lg-12 form_heading">Event Date</label>
+
+ <div class="form-group col-md">
+   <select class="custom-select form-control" id="exp-month">
+  <option value="1">1 - January</option>
+  <option value="2">2 - February</option>
+  <option value="3">3 - March</option>
+  <option value="4">4 - April</option>
+  <option value="5">5 - May</option>
+  <option value="6">6 - June</option>
+  <option value="7">7 - July</option>
+  <option value="8">8 - August</option>
+  <option value="9">9 - September</option>
+  <option value="10">10 - October</option>
+  <option value="11">11 - November</option>
+  <option value="12">12 - December</option>
+</select>
+  </div>
+
+<div class="form-group col-sm">
+  <select class="custom-select form-control" id="year">
+  <option value="2016">2018</option>
+  <option value="2017">2019</option>
+  <option value="2018">2020</option>
+  <option value="2019">2021</option>
+  <option value="2020">2022</option>
+</select>
+ </div>
+
+ <div class="form-group col-sm">
+   <select class="custom-select form-control" id="start-time">
+     <option value="700">7:00 A.M</option>
+     <option value="730">7:30 A.M</option>
+     <option value="800">8:00 A.M</option>
+     <option value="830">8:30 A.M</option>
+     <option value="900">9:00 A.M</option>
+     <option value="900">9:30 A.M</option>
+     <option value="1000">10:00 A.M</option>
+     <option value="1030">10:30 A.M</option>
+     <option value="1100">11:00 A.M</option>
+     <option value="1130">11:30 A.M</option>
+     <option value="1200">12:00 P.M</option>
+     <option value="1230">12:30 P.M</option>
+     <option value="1300">1:00 P.M</option>
+     <option value="1330">1:30 P.M</option>
+     <option value="1400">2:00 P.M</option>
+     <option value="1430">2:30 P.M</option>
+     <option value="1500">3:00 P.M</option>
+     <option value="1530">3:30 P.M</option>
+     <option value="1600">4:00 P.M</option>
+     <option value="1630">4:30 P.M</option>
+     <option value="1700">5:00 P.M</option>
+     <option value="1730">5:30 P.M</option>
+     <option value="1800">6:00 P.M</option>
+     <option value="1830">6:30 P.M</option>
+     <option value="1900">7:00 P.M</option>
+     <option value="1930">7:30 P.M</option>
+     <option value="2000">8:00 P.M</option>
+     <option value="2030">8:30 P.M</option>
+     <option value="2100">9:00 P.M</option>
+     <option value="2130">9:30 P.M</option>
+     <option value="2200">10:00 P.M</option>
+     <option value="2230">10:30 P.M</option>
+     <option value="2300">11:00 P.M</option>
+     <option value="2330">11:30 P.M</option>
+ </select>
+  </div>
+</div>
+
+
+<div class="form-group">
+<label class="form_heading">Event Type</label><!-- Event type  ------->
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">Auto Racing</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">Comedy</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+  <label class="form-check-label" for="exampleRadios2">Concert</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+  <label class="form-check-label" for="exampleRadios2">Festival</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
+  <label class="form-check-label" for="exampleRadios2">Foodie</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
+  <label class="form-check-label" for="exampleRadios2">Horse Racing</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7" value="option7">
+  <label class="form-check-label" for="exampleRadios2">Market/Shopping</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8" value="option8">
+  <label class="form-check-label" for="exampleRadios2">Sports</label>
+ </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="form_heading">Event options</label><!-- Event options  ------->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">Kid friendly?</label>
+</div>
+
+ <div class="form-check">
+   <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+   <label class="form-check-label" for="defaultCheck2">Free</label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+  <label class="form-check-label" for="defaultCheck3">$$$$</label>
+ </div>
+
+ <div class="form-check">
+   <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+   <label class="form-check-label" for="defaultCheck4">Pets OK?</label>
+  </div>
+</div>
+
+
+<div class="form-group"><!-- Event description  -->
+  <label class="form_heading" for="formGroupExampleInput3">Comments</label>
+  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Description of event">
+</div>
+
+<div class="form-group"><!-- Web address for more info  -->
+  <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Web address for more info">
+</div>
+
+</form>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 </html>
