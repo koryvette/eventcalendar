@@ -7,6 +7,13 @@ body{
   background-color: white;
 }
 
+TD{
+  text-align: center;
+}
+
+TH{
+  text-align: center;
+}
 
 caption{
   color: black;
@@ -49,9 +56,16 @@ h4 {
   transition: all .3s ease;
 }
 
+.locations{
+  border-radius: 8%;
+}
+
 .locations:hover{
   transform: scale(1.2);
   transition: all .3s ease;
+}
+.img-rounded{
+  border-radius: 6%;
 }
 
 .title{
@@ -95,7 +109,7 @@ h4 {
 }
 
 #banner {
-background: url("../img/thunder_1_revised.jpg");
+background: url("../img/thunder.jpg");
 background-position: bottom;
 background-size: 100% 100%;
 }
@@ -150,155 +164,118 @@ section:target p{
      height: 15px;
 }
  .fourth{
-     background: url('../img/categories/4thstreetlive_revised.png');
-     box-shadow:  4px 4px black;
      font-weight: bold;
      text-align: center;
-     height: 100px;
+     height: 75px;
 }
  .churchill{
-     background: url('../img/categories/churchill.png');
-     box-shadow:  4px 4px black;
      font-weight: bold;
      text-align: center;
-     background-position: center bottom;
-     height: 100px;
+     background-position:  bottom;
+     height: 75px;
      align-items:
 }
 .comedy{
-    background: url('../img/categories/comedy_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
     background-position: right center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .kfec{
-    background: url('../img/categories/KFEC_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .headliners{
-    background: url('../img/categories/headliners_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .amphi{
-    background: url('../img/categories/iroquois_revised.png');
-    box-shadow:  4px 4px black;
     background-position: center bottom;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .yum{
-    background: url('../img/categories/yumcenter_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .kyca{
-    background: url('../img/categories/centerforthearts_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    background-position: center bottom;
+    height: 75px;
     align-items:
 }
 
 .mercury{
-    background: url('../img/categories/mercury_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .dragway{
-    background: url('../img/categories/ohiovalley_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .palace{
-    background: url('../img/categories/palace_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .slugger{
-    background: url('../img/categories/slugger_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .gocards{
-    background: url('../img/categories/gocards_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .waterfront{
-    background: url('../img/categories/waterfront_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .mellwood{
-    background: url('../img/categories/mellwood_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .jbspeed{
-    background: url('../img/categories/jbspeed_revised.png');
-    box-shadow:  4px 4px black;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .waylon{
-    background: url('../img/categories/waylon_revised.png');
-    box-shadow:  4px 4px black;
-    background-position: center bottom;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 .library{
-    background: url('../img/categories/library_revised.png');
-    box-shadow:  4px 4px black;
-    background-position: center bottom;
     font-weight: bold;
     text-align: center;
-    height: 100px;
+    height: 75px;
     align-items:
 }
 
@@ -307,7 +284,7 @@ section:target p{
 }
 
 /*========= media queries ------------------ */
-@media (min-width: 300px) {
+@media (min-width: 50px) {
 .container{
   flex-direction: column;
 }
@@ -315,13 +292,15 @@ section:target p{
 .categories{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:  space-around;
   flex-wrap: wrap;
   order: 1;
   }
   .primary_list{
     order: -1;
   }
+
+
 }
 
 
@@ -336,4 +315,88 @@ section:target p{
   justify-content: flex-start;
   order: -1;
   }
+
+
+     .fourth{
+         background: url('../img/categories/4thstreetlive_revised.png');
+         box-shadow:  4px 4px black;
+    }
+     .churchill{
+         background: url('../img/categories/churchill.png');
+         box-shadow:  4px 4px black;
+    }
+    .comedy{
+        background: url('../img/categories/comedy_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .kfec{
+        background: url('../img/categories/KFEC_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .headliners{
+        background: url('../img/categories/headliners_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .amphi{
+        background: url('../img/categories/iroquois_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .yum{
+        background: url('../img/categories/yumcenter_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .kyca{
+        background: url('../img/categories/centerforthearts_revised.png');
+        box-shadow:  4px 4px black;
+        background-position: center bottom;
+      }
+
+    .mercury{
+        background: url('../img/categories/mercury_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .dragway{
+        background: url('../img/categories/ohiovalley_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .palace{
+        background: url('../img/categories/palace_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .slugger{
+        background: url('../img/categories/slugger_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .gocards{
+        background: url('../img/categories/gocards_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .waterfront{
+        background: url('../img/categories/waterfront_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .mellwood{
+        background: url('../img/categories/mellwood_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .jbspeed{
+        background: url('../img/categories/jbspeed_revised.png');
+        box-shadow:  4px 4px black;
+        background-position: center bottom;
+    }
+    .waylon{
+        background: url('../img/categories/waylon_revised.png');
+        box-shadow:  4px 4px black;
+        background-position: center bottom;
+    }
+    .library{
+        background: url('../img/categories/library_revised.png');
+        box-shadow:  4px 4px black;
+        background-position: center bottom;
+    }
+
+
+
+
+
 }
