@@ -21,4 +21,4 @@ function populateEvents (json){
   console.log(json);
 }
 
-  document.addEventListener("DOMContentloaded",( => {loadevents();});
+  document.addEventListener("DOMContentloaded",() => {loadevents(); });
