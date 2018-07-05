@@ -1,4 +1,4 @@
-const eventBody = document.querySelector("")
+const eventBody = document.querySelector("#event_table > body")
 
 function loadevents(){
 
