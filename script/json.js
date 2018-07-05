@@ -18,7 +18,7 @@ eventlist.send();
 }
 
 function populateEvents (json){
-  while
+  console.log(json);
 }
 
   document.addEventListener("DOMContentloaded",( => {loadevents();});
