@@ -23,7 +23,7 @@
 
  $(document).ready(function(){
  var count = 0;
- var images = ["img/skyline_day.jpg",
+ var images = ["img/skyline_day_revised.jpg",
                "img/belle.jpg",
                "img/thunder.jpg",
                "img/churchill.jpg",
