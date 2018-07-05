@@ -10,9 +10,10 @@
 <link rel="stylesheet" href="css/flex_bootstrap.css">
 
 <script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script src="jquery.date-dropdowns.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script type="text/javascript" src="script/LOU_JS.js"></script>
-
+<script type="text/javascript" src="script/json.js"></script>
 </head>
 <body class="bg-danger text-white">
 
@@ -53,7 +54,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input id="filterInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -62,15 +63,14 @@
 <!--  navigation bar end  ------------>
 
 <!--  jumbotron  --------------------->
-<div id="banner" class="jumbotron jumbotron-fluid">
+<div id="banner" class="jumbotron jumbotron-fluid bg-dark">
   <div class="container text-sm-center pt-3">
 
    <h1 class="display-4 title">What's up LOUISVILLE?</h1>
     <p class="lead">Your comprehensive guide for what's going on in Louisville.</p>
     <br>
-  <br>
     <br>
-      <br>
+    <br>
   </div>
  </div>
 </div>
@@ -106,231 +106,734 @@
  <div class="col">
    <div class="main_content">  <!--beginning of main webpage content -->
 
-     <h1 class="event-type"><strong>Education</strong></h1>
-     <caption>Wanna learn something new or grab a new hobby?  Check out these classes going on.</caption>
-     <table class = "event_table bg-secondary">
-     <tr>
-     <th class = "event_heading heading" >Event Name</th>
-     <th class = "venue_heading heading">Venue</th>
-     <th class = "start_heading heading">Start Date</th>
-     <th class = "time_heading heading">Start Time</th>
-     <th class = "city_heading heading">City</th>
-     <th class = "link_heading heading">Link</th>
-     <th class = "desc_heading heading">Description</th>
-     <th class = "type_heading heading">Event Type</th>
+     <h1 class="event-type"><strong>Upcoming events for JULY</strong></h1>
+     <caption>Here's a current list of events happening around the 'Ville:</caption>
+     <table class = "event_table table-warning text-danger table-striped">
+     <TR id="names">
+     <th class = "event_heading heading bg-dark" >Event Name</th>
+     <th class = "venue_heading heading bg-dark">Venue</th>
+     <th class = "start_heading heading bg-dark">Start Date</th>
+     <th class = "time_heading heading bg-dark">Start Time</th>
+     <th class = "city_heading heading bg-dark">City</th>
+     <th class = "desc_heading heading bg-dark">Description</th>
+     <th class = "type_heading heading bg-dark">Event Type</th>
      </tr>
+
+     <TR id="names">
+     <TD class= "text-dark  ">SIMMENTAL BREEDER'S SWEEPSTAKES</TD>
+     <TD class= "text-dark  "><a href= "https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     </TR>
+     <TR id="names" class="table-striped">
+     <TD class= "text-dark  ">The Pretenders</TD>
+     <TD class= "text-dark  "><a href= "http://www.louisvillepalace.com/#http://www.louisvillepalace.com/" target="_blank">Palace Theatre</a></TD>
+     <TD class= "text-dark  ">7/10/2018</TD>
+     <TD class= "text-dark  ">20:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t458&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/3/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">July 3 Fireworks Extravaganza, Stars &amp; Stripes Hat Giveaway, Baseball Bingo</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t459&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/6/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Christmas in July, Friday Night Fireworks, &quot;Drain the Keg&quot; Friday</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t460&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Party at the Park, Friends &amp; Family Night</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t461&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/8/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t462&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/12/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Thirsty Thursday</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t463&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/13/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Jake the Diamond Dog, Mesh Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t464&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Party at the Park</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t465&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/15/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Princess &amp; Pirate Night, Kids Eat Free, Kids Inflatable FunZone, , Kids Run the Bases, Appearance by the Zooperstars</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t466&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/24/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Dollar Menu Night, Baseball Bingo</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t467&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/25/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Quarter Hot Dogs</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t468&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/26/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Thirsty Thursday, Singles' Night</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t469&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/27/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Throwback Weekend, Throwback Colonels Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t470&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Throwback Weekend, Pee Wee Reese Replica Statue Giveaway, Party at the Park</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
+     <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t471&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/29/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">An Evening with Guided By Voices Celebrating Headliners Music Hall's 20th Anniversary&#10;<BR></TD>
+     <TD class= "text-dark  "><a href= "http://headlinerslouisville.com/events/&quot" target="_blank">Headliners Music Hall</a></TD>
+     <TD class= "text-dark  ">7/6/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">NuLu Luau</TD>
+     <TD class= "text-dark  "><a href= "https://nulubusinessassocation.wildapricot.org/event-2818428" target="_blank">NULU</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Festival</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://douglassloopfarmersmarket.com/&quot" target="_blank">Douglas Loop</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://douglassloopfarmersmarket.com/&quot" target="_blank">Douglas Loop</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://douglassloopfarmersmarket.com/&quot" target="_blank">Douglas Loop</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://douglassloopfarmersmarket.com/&quot" target="_blank">Douglas Loop</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.bardstownroadfarmersmarket.com/&quot" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.bardstownroadfarmersmarket.com/&quot" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.bardstownroadfarmersmarket.com/&quot" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.bardstownroadfarmersmarket.com/&quot" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html&quot" target="_blank">NuLu</a></TD>
+     <TD class= "text-dark  ">7/5/2018</TD>
+     <TD class= "text-dark  ">15:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html&quot" target="_blank">NuLu</a></TD>
+     <TD class= "text-dark  ">7/12/2018</TD>
+     <TD class= "text-dark  ">15:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html&quot" target="_blank">NuLu</a></TD>
+     <TD class= "text-dark  ">7/19/2018</TD>
+     <TD class= "text-dark  ">15:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html&quot" target="_blank">NuLu</a></TD>
+     <TD class= "text-dark  ">7/26/2018</TD>
+     <TD class= "text-dark  ">15:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.jeffersontownky.gov/304/Farmers-Market&quot" target="_blank">Jeffersontown</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.jeffersontownky.gov/304/Farmers-Market&quot" target="_blank">Jeffersontown</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.jeffersontownky.gov/304/Farmers-Market&quot" target="_blank">Jeffersontown</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.jeffersontownky.gov/304/Farmers-Market&quot" target="_blank">Jeffersontown</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://smfarmersmarket.beargrasschristian.org/&quot" target="_blank">St. Matthew's</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://smfarmersmarket.beargrasschristian.org/&quot" target="_blank">St. Matthew's</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://smfarmersmarket.beargrasschristian.org/&quot" target="_blank">St. Matthew's</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://smfarmersmarket.beargrasschristian.org/&quot" target="_blank">St. Matthew's</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal&quot" target="_blank">Schnitzelburg </a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal&quot" target="_blank">Schnitzelburg </a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal&quot" target="_blank">Schnitzelburg </a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal&quot" target="_blank">Schnitzelburg </a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">10:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Harry Potter and the Prisoner of Azkaban in Concert</TD>
+     <TD class= "text-dark  "><a href= "http://www.kentuckycenter.org/&quot" target="_blank">Ky Center for the Arts</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Miranda Sings Live... No Offense</TD>
+     <TD class= "text-dark  "><a href= "http://www.kentuckycenter.org/&quot" target="_blank">Ky Center for the Arts</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">20:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/8/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/15/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/22/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/29/2018</TD>
+     <TD class= "text-dark  ">8:00:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">15:30:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">15:30:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">15:30:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://newalbanyfarmersmarket.com/&quot" target="_blank">New Albany</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">15:30:00</TD>
+     <TD class= "text-dark  ">New Albany</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Gray Street Farmers Market</TD>
+     <TD class= "text-dark  "><a href= "http://louisville.edu/sphis/gsfm&quot" target="_blank">UofL</a></TD>
+     <TD class= "text-dark  ">7/5/2018</TD>
+     <TD class= "text-dark  ">10:30:00</TD>
+     <TD class= "text-dark  ">Louisville
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Gray Street Farmers Market</TD>
+     <TD class= "text-dark  "><a href= "http://louisville.edu/sphis/gsfm&quot" target="_blank">UofL</a></TD>
+     <TD class= "text-dark  ">7/12/2018</TD>
+     <TD class= "text-dark  ">10:30:00</TD>
+     <TD class= "text-dark  ">Louisville
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Gray Street Farmers Market</TD>
+     <TD class= "text-dark  "><a href= "http://louisville.edu/sphis/gsfm&quot" target="_blank">UofL</a></TD>
+     <TD class= "text-dark  ">7/19/2018</TD>
+     <TD class= "text-dark  ">10:30:00</TD>
+     <TD class= "text-dark  ">Louisville
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Gray Street Farmers Market</TD>
+     <TD class= "text-dark  "><a href= "http://louisville.edu/sphis/gsfm&quot" target="_blank">UofL</a></TD>
+     <TD class= "text-dark  ">7/26/2018</TD>
+     <TD class= "text-dark  ">10:30:00</TD>
+     <TD class= "text-dark  ">Louisville
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Turn The Page - Tribute to Bob Seger</TD>
+     <TD class= "text-dark  "><a href= "http://www.mercuryballroom.com/&quot" target="_blank">Mercury Ballroom</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">21:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Saved By The 90's</TD>
+     <TD class= "text-dark  "><a href= "http://www.mercuryballroom.com/&quot" target="_blank">Mercury Ballroom</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">21:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Tory Lanez</TD>
+     <TD class= "text-dark  "><a href= "http://www.mercuryballroom.com/&quot" target="_blank">Mercury Ballroom</a></TD>
+     <TD class= "text-dark  ">7/30/2018</TD>
+     <TD class= "text-dark  ">20:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Live Events</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">LOU City vs. Toronto FC II</TD>
+     <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/18/2018</TD>
+     <TD class= "text-dark  ">19:00:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Charlotte Independence</TD>
+     <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/&quot" target="_blank">Slugger Field</a></TD>
+     <TD class= "text-dark  ">7/21/2018</TD>
+     <TD class= "text-dark  ">19:30:00</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Outlaws at the Valley/Bracket</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/7/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/11/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/13/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Diesel Race</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/14/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/18/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">NHDRO Motorcycle Race</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/20/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Outlaw 4.70/Combo/Bracket/Double Points</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/28/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+     <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/&quot" target="_blank">Ohio Valley Raceway</a></TD>
+     <TD class= "text-dark  ">7/3/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Sports</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/4/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/11/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/18/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Farmer's Market</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/25/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Shopping</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">Live! After Five</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/6/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     </TR>
+     <TR id="names">
+     <TD class= "text-dark  ">U-Jam Fitness</TD>
+     <TD class= "text-dark  "><a href= "http://www.4thstlive.com/&quot" target="_blank">4th Street Live!</a></TD>
+     <TD class= "text-dark  ">7/11/2018</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">Louisville</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     <TD class= "text-dark  ">N/A</TD>
+     </TR>
      </table>
      <br>
      <br>
-
-        <h1 class="event-type"><strong>Festivals</strong></h1>
-        <caption>This summer, there are all sorts of festivals going on around town.</caption>
-        <table class = "event_table bg-secondary">
-        <tr>
-        <th class = "event_heading heading" >Event Name</th>
-        <th class = "venue_heading heading">Venue</th>
-        <th class = "start_heading heading">Start Date</th>
-        <th class = "time_heading heading">Start Time</th>
-        <th class = "city_heading heading">City</th>
-        <th class = "link_heading heading">Link</th>
-        <th class = "desc_heading heading">Description</th>
-        <th class = "type_heading heading">Event Type</th>
-        </tr>
-        </table>
-        <br>
-        <br>
-
-      <h1 class="event-type"><strong>Foodie</strong></h1>
-      <p class="sub_cat">Beer/Bourbon/Wine tastings</p>
-      <caption>This summer, there are all sorts of festivals going on around town.</caption>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading" >Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <p class="sub_cat">Tastes of LOU</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-        <th class = "event_heading heading" >Event Name</th>
-        <th class = "venue_heading heading">Venue</th>
-        <th class = "start_heading heading">Start Date</th>
-        <th class = "time_heading heading">Start Time</th>
-        <th class = "city_heading heading">City</th>
-        <th class = "link_heading heading">Link</th>
-        <th class = "desc_heading heading">Description</th>
-        <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <br>
-      <br>
-
-      <h1 class="event-type"><strong>Live Events</strong></h1>
-
-      <p  class="sub_cat">Concerts</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading" >Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-
-      <p  class="sub_cat">Live music and other events</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading">Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-
-      <p  class="sub_cat">Performing Arts</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading" >Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <br>
-      <br>
-
-      <h1 class="event-type"><strong>Markets</strong></h1>
-      <caption>Got money burning a whole int your pocket?  Or just like to window shop?  Check out some of the local markets around the Ville.</caption>
-      <p class="sub_cat">Farmer's Markets</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-        <th class = "event_heading heading" >Event Name</th>
-        <th class = "venue_heading heading">Venue</th>
-        <th class = "start_heading heading">Start Date</th>
-        <th class = "time_heading heading">Start Time</th>
-        <th class = "city_heading heading">City</th>
-        <th class = "link_heading heading">Link</th>
-        <th class = "desc_heading heading">Description</th>
-        <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <p  class="sub_cat">Pop-up markets</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-        <th class = "event_heading heading" >Event Name</th>
-        <th class = "venue_heading heading">Venue</th>
-        <th class = "start_heading heading">Start Date</th>
-        <th class = "time_heading heading">Start Time</th>
-        <th class = "city_heading heading">City</th>
-        <th class = "link_heading heading">Link</th>
-        <th class = "desc_heading heading">Description</th>
-        <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <br>
-      <br>
-      <h1 class="event-type"><strong>Sports</strong></h1>
-
-      <p  class="sub_cat">College Sports</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading" >Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <p  class="sub_cat">Professional Sports</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading" >Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-
-      <p  class="sub_cat">Racing</p>
-      <table class = "event_table bg-secondary">
-      <tr>
-      <th class = "event_heading heading">Event Name</th>
-      <th class = "venue_heading heading">Venue</th>
-      <th class = "start_heading heading">Start Date</th>
-      <th class = "time_heading heading">Start Time</th>
-      <th class = "city_heading heading">City</th>
-      <th class = "link_heading heading">Link</th>
-      <th class = "desc_heading heading">Description</th>
-      <th class = "type_heading heading">Event Type</th>
-      </tr>
-      </table>
-      <br>
-      <br>
-
-  <h1 class="event-type"><strong>Technology</strong></h1>
-  <caption>Got money burning a whole int your pocket?  Or just like to window shop?  Check out some of the local markets around the Ville.</caption>
-  <p class="sub_cat">Farmer's Markets</p>
-  <table class = "event_table bg-secondary">
-  <tr>
-    <th class = "event_heading heading" >Event Name</th>
-    <th class = "venue_heading heading">Venue</th>
-    <th class = "start_heading heading">Start Date</th>
-    <th class = "time_heading heading">Start Time</th>
-    <th class = "city_heading heading">City</th>
-    <th class = "link_heading heading">Link</th>
-    <th class = "desc_heading heading">Description</th>
-    <th class = "type_heading heading">Event Type</th>
-  </tr>
-  </table>
-
-
 
         </div> <!-- end main-content div -->
        </div> <!-- end primary_list div -->
 
 
   <div class="col-md-4 d-none d-lg-block"><!-- Featured items div -->
+    <br>
     <div class="thumbnail featured">
       <a href="https://www.kfcyumcenter.com/events/detail/journey-with-def-leppard" target="_blank">
-        <img  src="img/featured/defleopard.jpg" class="img-rounded .img-responsive" alt="Def Leopard" style="width:80%">
+        <img  src="img/featured/defleopard.jpg" class="img-rounded img-responsive" alt="Def Leopard" style="width:80%">
         <div class="caption">
           <p>See Def Leopard in concert!!</p>
         </div>
       </a>
       <a href="http://www.4thstlive.com/events#event-4184" target="_blank">
-        <img src="img/featured/beersandbags.jpg" class="img-rounded .img-responsive" alt="Beers and Bags" style="width:80%">
+        <img src="img/featured/beersandbags.jpg" class="img-rounded" alt="Beers and Bags" style="width:80%">
         <div class="caption">
           <p>Cornhole leage!!</p>
         </div>
       <a href="https://www.kfcyumcenter.com" target="_blank">
-        <img src="img/featured/Maroon5.jpg" class="img-rounded .img-responsive" alt="Maroon5" style="width:80%">
+        <img src="img/featured/Maroon5.jpg" class="img-rounded img-responsive" alt="Maroon5" style="width:80%">
         <div class="caption">
           <p>See Maroon 5 live!!</p>
+        </div>
+      </a>
+      <a href="https://forecastlefest.com/" target="_blank">
+        <img src="img/featured/forcastle.jpg" class="img-rounded img-responsive" alt="Forecastle" style="width:80%">
+        <div class="caption">
+          <p></p>
+          <br>
+        </div>
+      </a>
+      <a href="https://www.kfcyumcenter.com/events/detail/cirque-du-soleil-corteo" target="_blank">
+        <img src="img/featured/Cirque.jpg" class="img-rounded .img-responsive" alt="Cirque du soleil" style="width:80%">
+        <div class="caption">
+          <p></p>
+          <br>
         </div>
       </a>
 
@@ -376,7 +879,7 @@
  <label class="col-lg-12 form_heading">Event Date</label>
 
  <div class="form-group col-md">
-   <select class="custom-select form-control" id="exp-month">
+   <select class="custom-select form-control" id="month">
   <option value="1">1 - January</option>
   <option value="2">2 - February</option>
   <option value="3">3 - March</option>
@@ -391,6 +894,42 @@
   <option value="12">12 - December</option>
 </select>
   </div>
+
+<div class="form-group col-md">
+<select class="custom-select form-control" id="year">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+  </select>
+</div>
 
 <div class="form-group col-sm">
   <select class="custom-select form-control" id="year">
