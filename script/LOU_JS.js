@@ -23,16 +23,22 @@
 
  $(document).ready(function(){
  var count = 0;
- var images = ["img/papajohn_night_revised.jpg",
-               "img/skyline_day.jpg",
-               "img/nightbridge_revised.jpg",
-               "img/papajohn_revised.jpg",
-               "img/redthunder_revised.jpg",
+ var images = ["img/skyline_day.jpg",
+               "img/belle.jpg",
+               "img/thunder.jpg",
+               "img/churchill.jpg",
                "img/4thstreet_revised.jpg",
-               "img/walkingbridge_revised.jpg",
-               "img/FLstate_revised.jpg",
-               "img/thunder_1_revised.jpg",
-               "img/YUM_revised.jpg"];
+               "img/slugger.jpg",
+               "img/LOU_Skyline_night.jpg",
+               "img/papajohn_revised.jpg",
+               "img/highlands.jpg",
+               "img/thunder2.jpg",
+               "img/YUM_revised.jpg",
+               "img/waterfrontpark.jpg",
+               "img/ali.jpg",
+               "img/slugger2.jpg",
+               "img/papajohn_night_revised.jpg",
+               ];
 
  var image = $('#banner');
 
