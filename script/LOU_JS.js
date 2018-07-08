@@ -25,11 +25,13 @@
  var count = 0;
  var images = ["img/skyline_day_revised.jpg",
                "img/belle.jpg",
+               "img/bourbon.jpg",
                "img/thunder.jpg",
                "img/churchill.jpg",
                "img/4thstreet_revised.jpg",
                "img/slugger.jpg",
                "img/LOU_Skyline_night.jpg",
+               "img/centerforarts.jpg",
                "img/papajohn_revised.jpg",
                "img/highlands.jpg",
                "img/thunder2.jpg",
@@ -56,3 +58,53 @@
  },5000);
 
  });
+
+/* SEARCH function javascript
+
+function mySearch(){
+  let mySearch = document.getElementByid("mySearch");
+  var filter = input.value.toUpperCase();
+  var TR = document.getElementByid("eventRow");
+  var TD = TR.document.getElementByTagName("TD");
+
+  for(i = 0; <TD.length; i++;){
+    a = TD[i].getElementByTagName("a")[0];
+
+    if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
+      TD[i].style.display="";
+    }else{
+      TD[i.style.display = "none";]
+      }
+    }
+  }
+
+
+
+}
+ SEARCH function javascript */
+
+/* SEARCH function jquery */
+$(document).ready(function(){
+     $('#search').keyup(function(){
+          search_table($(this).val());
+     });
+     function search_table(value){
+          $('#table_of_events tr').each(function(){
+               var found = 'false';
+               $(this).each(function(){
+                    if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                    {
+                         found = 'true';
+                    }
+               });
+               if(found == 'true')
+               {
+                    $(this).show();
+               }
+               else
+               {
+                    $(this).hide();
+               }
+          });
+     }
+});
