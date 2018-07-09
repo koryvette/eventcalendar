@@ -50,7 +50,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -76,7 +76,7 @@
 
     <div class="container-fluid">
       <div class="row align-items-start">
-        <div class="categories col- ml-4">
+        <div class="categories col-lg-1">
  <!-- menu options div -->
     <!--<button type="submit" class="menu_options"><a href="LOU_html.html">Home</a></button> -->
     <p class="locations home bg-danger text-white">Check out these links:</p>
@@ -101,22 +101,25 @@
 
   </div> <!-- end of categories div -->
 
-<div class="col">
+<div class="col-lg-9">
 
 <div class="main_content">
 <h1 class="event-type"><strong>Technology</strong></h1>
 
   <caption>This summer, there are all sorts of festivals going on around town.</caption><br>
   <table class = "event_table table-warning text-danger table-striped">
-  <tr>
-  <th class = "event_heading heading bg-dark" >Event Name</th>
-  <th class = "venue_heading heading bg-dark">Host</th>
-  <th class = "start_heading heading bg-dark">Start Date</th>
-  <th class = "time_heading heading bg-dark">Start Time</th>
-  <th class = "city_heading heading bg-dark">City</th>
-  <th class = "desc_heading heading bg-dark">Description</th>
-  <th class = "type_heading heading bg-dark">Category</th>
-  </tr>
+    <thead>
+  <TR id="table_header">
+    <th class = "event_heading heading bg-dark" >Event Name</th>
+    <th class = "venue_heading heading bg-dark">Venue</th>
+    <th class = "start_heading heading bg-dark">Start Date</th>
+    <th class = "time_heading heading bg-dark">Start Time</th>
+    <th class = "city_heading heading bg-dark">City</th>
+    <th class = "desc_heading heading bg-dark">Description</th>
+    <th class = "type_heading heading bg-dark">Event Type</th>
+    </tr>
+  </thead>
+  <tbody id="table_of_events">
 
 
   <TR>
@@ -335,11 +338,7 @@
   <TD class= "text-dark  ">N/A</TD>
   <TD class= "text-dark  ">  </TD>
   </TR>
-
-
-
-
-
+</tbody>
 
 
   </table>
@@ -349,21 +348,21 @@
 </div> <!--container end-->
 
 
-  <div class="col-md-4 d-none d-lg-block"><!-- Featured items div -->
+  <div class="col-lg-2 d-none d-xl-block"><!-- Featured items div -->
     <div class="thumbnail featured">
       <a href="https://www.kfcyumcenter.com/events/detail/journey-with-def-leppard" target="_blank">
-        <img  src="img/featured/defleopard.jpg" class="img-rounded .img-responsive" alt="Def Leopard" style="width:80%">
+        <img  src="img/featured/defleopard.jpg" class="img-rounded .img-responsive" alt="Def Leopard" style="width:100%">
         <div class="caption">
           <p>See Def Leopard in concert!!</p>
         </div>
       </a>
       <a href="http://www.4thstlive.com/events#event-4184" target="_blank">
-        <img src="img/featured/beersandbags.jpg" class="img-rounded .img-responsive" alt="Beers and Bags" style="width:80%">
+        <img src="img/featured/beersandbags.jpg" class="img-rounded .img-responsive" alt="Beers and Bags" style="width:100%">
         <div class="caption">
           <p>Cornhole leage!!</p>
         </div>
       <a href="https://www.kfcyumcenter.com" target="_blank">
-        <img src="img/featured/Maroon5.jpg" class="img-rounded .img-responsive" alt="Maroon5" style="width:80%">
+        <img src="img/featured/Maroon5.jpg" class="img-rounded .img-responsive" alt="Maroon5" style="width:100%">
         <div class="caption">
           <p>See Maroon 5 live!!</p>
         </div>

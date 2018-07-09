@@ -50,7 +50,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -76,7 +76,7 @@
 
     <div class="container-fluid">
       <div class="row align-items-start">
-        <div class="categories col- ml-4">
+        <div class="categories col-lg-1">
  <!-- menu options div -->
     <!--<button type="submit" class="menu_options"><a href="LOU_html.html">Home</a></button> -->
     <p class="locations home bg-danger text-white">Check out these links:</p>
@@ -102,7 +102,7 @@
 
   </div> <!-- end of categories div -->
 
-<div class="col">
+<div class="col-lg-9">
 
 <div class="main_content">
 
@@ -111,7 +111,8 @@
 
 <caption class="sub_cat_desc">Whether you root for Bellarmine or the Cards, college sports are covered here.</caption>
 <table class = "event_table table-warning text-danger table-striped">
-<tr>
+  <thead>
+<TR id="table_header">
   <th class = "event_heading heading bg-dark" >Event Name</th>
   <th class = "venue_heading heading bg-dark">Venue</th>
   <th class = "start_heading heading bg-dark">Start Date</th>
@@ -119,8 +120,10 @@
   <th class = "city_heading heading bg-dark">City</th>
   <th class = "desc_heading heading bg-dark">Description</th>
   <th class = "type_heading heading bg-dark">Event Type</th>
-</tr>
-<TR>
+  </tr>
+</thead>
+<tbody id="table_of_events">
+<TR id="names"><TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Indiana State</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">9/8/2018</TD>
@@ -129,7 +132,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Western Kentucky</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">9/15/2018</TD>
@@ -138,7 +141,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Florida State</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">9/29/2018</TD>
@@ -147,7 +150,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Georgia Tech</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">10/5/2018</TD>
@@ -156,7 +159,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Wake Forest</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">10/27/2018</TD>
@@ -165,7 +168,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Florida State</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">10/27/2018</TD>
@@ -174,7 +177,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. N.C. State</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">11/17/2018</TD>
@@ -183,7 +186,7 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">U of L vs. Kentucky</TD>
 <TD class= "text-dark  "><a href= "http://www.pjcardinalstadium.com/public_html/index.html" target="_blank">Papa John's Cardinal Stadium</a></TD>
 <TD class= "text-dark  ">11/24/2018</TD>
@@ -192,6 +195,9 @@
 <TD class= "text-dark  ">Louisville Cardinals football</TD>
 <TD class= "text-dark  ">Football</TD>
 </TR>
+</tbody>
+
+
 </table>
 
 <br>
@@ -199,7 +205,8 @@
 <h1 class="event-type"><strong>Professional Sports</strong></h1>
   <caption  class="sub_cat_desc">We may not have an NBA, NFL, or MLB team, but there are still plenty of "professional sports" going on around town.</caption>
 <table class = "event_table table-warning text-danger table-striped">
-<tr>
+<thead>
+<TR id="eventRow">
   <th class = "event_heading heading bg-dark" >Event Name</th>
   <th class = "venue_heading heading bg-dark">Venue</th>
   <th class = "start_heading heading bg-dark">Start Date</th>
@@ -208,8 +215,9 @@
   <th class = "desc_heading heading bg-dark">Description</th>
   <th class = "type_heading heading bg-dark">Event Type</th>
 </tr>
-
-<TR>
+</thead>
+<tbody id="table_of_events">
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t457" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/2/2018</TD>
@@ -218,7 +226,7 @@
 <TD class= "text-dark  ">Meijer Monday, Margarita Monday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t458" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/3/2018</TD>
@@ -227,7 +235,7 @@
 <TD class= "text-dark  ">July 3 Fireworks Extravaganza, Stars &amp; Stripes Hat Giveaway, Baseball Bingo</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
 <TD class= "text-dark  "><a href= "https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/6/2018</TD>
@@ -236,7 +244,7 @@
 <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t459" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/6/2018</TD>
@@ -245,7 +253,7 @@
 <TD class= "text-dark  ">Christmas in July, Friday Night Fireworks, &quot;Drain the Keg&quot; Friday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t460" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/7/2018</TD>
@@ -254,7 +262,7 @@
 <TD class= "text-dark  ">Party at the Park, Friends &amp; Family Night</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t461" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/8/2018</TD>
@@ -263,7 +271,7 @@
 <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t462" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/12/2018</TD>
@@ -272,7 +280,7 @@
 <TD class= "text-dark  ">Thirsty Thursday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
 <TD class= "text-dark  "><a href= "https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/13/2018</TD>
@@ -281,7 +289,7 @@
 <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t463" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/13/2018</TD>
@@ -290,7 +298,7 @@
 <TD class= "text-dark  ">Jake the Diamond Dog, Mesh Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t464" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/14/2018</TD>
@@ -299,7 +307,7 @@
 <TD class= "text-dark  ">Party at the Park</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t465" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/15/2018</TD>
@@ -308,7 +316,7 @@
 <TD class= "text-dark  ">Princess &amp; Pirate Night, Kids Eat Free, Kids Inflatable FunZone, , Kids Run the Bases, Appearance by the Zooperstars</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Toronto FC II</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/18/2018</TD>
@@ -317,7 +325,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Charlotte Independence</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/21/2018</TD>
@@ -326,7 +334,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t466" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/24/2018</TD>
@@ -335,7 +343,7 @@
 <TD class= "text-dark  ">Dollar Menu Night, Baseball Bingo</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t467" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/25/2018</TD>
@@ -344,7 +352,7 @@
 <TD class= "text-dark  ">Quarter Hot Dogs</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t468" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/26/2018</TD>
@@ -353,7 +361,7 @@
 <TD class= "text-dark  ">Thirsty Thursday, Singles' Night</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
 <TD class= "text-dark  "><a href= "https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/27/2018</TD>
@@ -362,7 +370,7 @@
 <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t469" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/27/2018</TD>
@@ -371,7 +379,7 @@
 <TD class= "text-dark  ">Throwback Weekend, Throwback Colonels Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t470" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/28/2018</TD>
@@ -380,7 +388,7 @@
 <TD class= "text-dark  ">Throwback Weekend, Pee Wee Reese Replica Statue Giveaway, Party at the Park</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t471" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">7/29/2018</TD>
@@ -389,7 +397,7 @@
 <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bluegrass World Series: Jasper vs FCSL (3:30 PM); Louisville vs Hattiesburg (7 PM)</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t472" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/1/2018</TD>
@@ -398,7 +406,7 @@
 <TD class= "text-dark  ">Chipper Jones Hall of Fame Game</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bluegrass World Series: Sterling vs Dubois County (3:30 PM); Louisville vs FCSL (7 PM)</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t473" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/3/2018</TD>
@@ -407,7 +415,7 @@
 <TD class= "text-dark  ">Louisville Salutes Johnny Bench Game</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Indy Eleven</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/5/2018</TD>
@@ -416,7 +424,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Sox</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t474" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/7/2018</TD>
@@ -425,7 +433,7 @@
 <TD class= "text-dark  ">Dollar Menu Night, Baseball Bingo</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Sox</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t475" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/8/2018</TD>
@@ -434,7 +442,7 @@
 <TD class= "text-dark  ">Hump Day Buffet</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Red Sox</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t476" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/9/2018</TD>
@@ -443,7 +451,7 @@
 <TD class= "text-dark  ">Thirsty Thursday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. IronPigs</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t477" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/10/2018</TD>
@@ -452,7 +460,7 @@
 <TD class= "text-dark  ">Friday Night Fireworks, &quot;Drain the Keg&quot; Friday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. IronPigs</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t478" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/11/2018</TD>
@@ -461,7 +469,7 @@
 <TD class= "text-dark  ">MARVEL Super Hero Night #2 (Hulk), Hulk Bobblehead Giveaway, Party at the Park</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">MARVEL Super Hero Nights</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t416#" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/11/2018</TD>
@@ -470,7 +478,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. IronPigs</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t479" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/12/2018</TD>
@@ -479,7 +487,7 @@
 <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases, , Team Card Set Giveaway</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Nashville SC</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/18/2018</TD>
@@ -488,7 +496,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t480" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/21/2018</TD>
@@ -497,7 +505,7 @@
 <TD class= "text-dark  ">Dollar Menu Night, Baseball Bingo, Bark in the Park</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t481" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/22/2018</TD>
@@ -506,7 +514,7 @@
 <TD class= "text-dark  ">Hump Day Buffet</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t482" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/23/2018</TD>
@@ -515,7 +523,7 @@
 <TD class= "text-dark  ">Thirsty Thursday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t483" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/24/2018</TD>
@@ -524,7 +532,7 @@
 <TD class= "text-dark  ">Friday Night Fireworks, Friends &amp; Family Night, &quot;Drain the Keg&quot; Friday</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t484" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/25/2018</TD>
@@ -533,7 +541,7 @@
 <TD class= "text-dark  ">Boy Scout Night, Party at the Park</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Charleston Battery</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">8/31/2018</TD>
@@ -542,7 +550,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
 <TD class= "text-dark  "><a href= "http://www.milb.com/index.jsp?sid=t485" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">9/2/2018</TD>
@@ -551,7 +559,7 @@
 <TD class= "text-dark  ">Labor Day Eve Fireworks, Kids Eat Free, Kids Inflatable FunZone, , Appearance by the Chicago Boyz</TD>
 <TD class= "text-dark  ">Baseball</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. FC Cincinnati</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">9/8/2018</TD>
@@ -560,7 +568,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Ottawa Fury FC</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">9/22/2018</TD>
@@ -569,7 +577,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">LOU City vs. Indy Eleven</TD>
 <TD class= "text-dark  "><a href= "https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
 <TD class= "text-dark  ">10/13/2018</TD>
@@ -578,24 +586,28 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Soccer</TD>
 </TR>
+</tbody>
+
 </table>
 <br>
 <br>
 <h1 class="event-type"><strong>Racing</strong></h1>
 
 <caption class="sub_cat_desc" >From horse racing to the drag strip, make your plans now!!</caption>
-<table class = "event_table table-warning text-danger table-striped">
-<tr>
-  <th class = "event_heading heading bg-dark" >Event Name</th>
-  <th class = "venue_heading heading bg-dark">Venue</th>
-  <th class = "start_heading heading bg-dark">Start Date</th>
-  <th class = "time_heading heading bg-dark">Start Time</th>
-  <th class = "city_heading heading bg-dark">City</th>
-  <th class = "desc_heading heading bg-dark">Description</th>
-  <th class = "type_heading heading bg-dark">Event Type</th>
-</tr>
-
-<TR>
+<   <table class = "event_table table-warning text-danger table-striped">
+     <thead>
+   <TR id="table_header">
+     <th class = "event_heading heading bg-dark" >Event Name</th>
+     <th class = "venue_heading heading bg-dark">Venue</th>
+     <th class = "start_heading heading bg-dark">Start Date</th>
+     <th class = "time_heading heading bg-dark">Start Time</th>
+     <th class = "city_heading heading bg-dark">City</th>
+     <th class = "desc_heading heading bg-dark">Description</th>
+     <th class = "type_heading heading bg-dark">Event Type</th>
+     </tr>
+   </thead>
+   <tbody id="table_of_events">
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/3/2018</TD>
@@ -604,7 +616,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Outlaws at the Valley/Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/7/2018</TD>
@@ -613,7 +625,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/11/2018</TD>
@@ -622,7 +634,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/13/2018</TD>
@@ -631,7 +643,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Diesel Race</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/14/2018</TD>
@@ -640,7 +652,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/18/2018</TD>
@@ -649,7 +661,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">NHDRO Motorcycle Race</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/20/2018</TD>
@@ -658,7 +670,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Outlaw 4.70/Combo/Bracket/Double Points</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">7/28/2018</TD>
@@ -667,7 +679,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Outlaws at the Valley/Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/4/2018</TD>
@@ -676,7 +688,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/8/2018</TD>
@@ -685,7 +697,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/10/2018</TD>
@@ -694,7 +706,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Combo/Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/11/2018</TD>
@@ -703,7 +715,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/15/2018</TD>
@@ -712,7 +724,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/17/2018</TD>
@@ -721,7 +733,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket/Jr Dragster Challenge</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/18/2018</TD>
@@ -730,7 +742,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/22/2018</TD>
@@ -739,7 +751,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/24/2018</TD>
@@ -748,7 +760,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket/Double Points</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/25/2018</TD>
@@ -757,7 +769,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/29/2018</TD>
@@ -766,7 +778,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">8/31/2018</TD>
@@ -775,7 +787,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/5/2018</TD>
@@ -784,7 +796,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/7/2018</TD>
@@ -793,7 +805,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/8/2018</TD>
@@ -802,7 +814,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/12/2018</TD>
@@ -811,7 +823,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/14/2018</TD>
@@ -820,7 +832,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">TBA</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/15/2018</TD>
@@ -829,7 +841,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/19/2018</TD>
@@ -838,7 +850,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/21/2018</TD>
@@ -847,7 +859,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Outlaw 4.70/Combo/Bracket/Double Points</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/22/2018</TD>
@@ -856,7 +868,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/26/2018</TD>
@@ -865,7 +877,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/28/2018</TD>
@@ -874,7 +886,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">9/29/2018</TD>
@@ -883,7 +895,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/3/2018</TD>
@@ -892,7 +904,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Fri Night Test for Doorslammers cars only</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/5/2018</TD>
@@ -901,7 +913,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">44th Annual Doorslammer Nat'l</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/6/2018</TD>
@@ -910,7 +922,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/10/2018</TD>
@@ -919,7 +931,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/12/2018</TD>
@@ -928,7 +940,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/13/2018</TD>
@@ -937,7 +949,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/17/2018</TD>
@@ -946,7 +958,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/19/2018</TD>
@@ -955,7 +967,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Bracket</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/20/2018</TD>
@@ -964,7 +976,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/24/2018</TD>
@@ -973,7 +985,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/26/2018</TD>
@@ -982,7 +994,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">21st Annual Halloween Bash Combo/Bracket/Double Points</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/27/2018</TD>
@@ -991,7 +1003,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
-<TR>
+<TR id="eventRow">
 <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
 <TD class= "text-dark  "><a href= "http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
 <TD class= "text-dark  ">10/31/2018</TD>
@@ -1000,6 +1012,7 @@
 <TD class= "text-dark  ">N/A</TD>
 <TD class= "text-dark  ">Auto Racing</TD>
 </TR>
+</tbody>
 </table>
 
 
@@ -1009,16 +1022,16 @@
 </div> <!--  end main-content div  ---->
 </div> <!--  container end  ----------->
 
-<div class="col-md-4 d-none d-lg-block">
+<div class="col-lg-2 d-none d-xl-block">
   <div class="thumbnail">
     <a href="https://www.kfcyumcenter.com" target="_blank">
-      <img  src="img/featured/EddieGriffin.jpg" class="img-rounded .img-responsive" alt="Eddie Griffin" style="width:80%">
+      <img  src="img/featured/EddieGriffin.jpg" class="img-rounded .img-responsive" alt="Eddie Griffin" style="width:100%">
       <div class="caption">
           <p>See Eddie Griffin live!!</p>
       </div>
     </a>
     <a href="https://www.kfcyumcenter.com" target="_blank">
-      <img src="img/featured/Maroon5.jpg" class="img-rounded .img-responsive" alt="Maroon5" style="width:80%">
+      <img src="img/featured/Maroon5.jpg" class="img-rounded .img-responsive" alt="Maroon5" style="width:100%">
       <div class="caption">
         <p>See Maroon 5 live!!</p>
       </div>
