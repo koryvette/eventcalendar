@@ -97,24 +97,26 @@
       <p class="locations waylon"><a href="https://waylonslouisville.com/" target="_blank">Waylon's Feed</a></p>
       <p class="locations library"><a href="http://lfpl.org/" target="_blank">Public Library</a></p>
 
- </div>
+ </div><!-- end of categories div ---->
 
  <div class="col-lg-9">
    <div class="main_content">  <!--beginning of main webpage content -->
 
      <h1 class="event-type"><strong>Upcoming events for JULY</strong></h1>
      <caption>Here's a current list of events happening around the 'Ville:</caption>
-     <table id="table_of_events" class = "event_table table-warning text-danger table-striped">
+     <table class = "event_table table-warning text-danger table-striped">
+       <thead>
      <TR id="table_header">
-     <th class = "event_heading heading bg-dark" >Event Name</th>
-     <th class = "venue_heading heading bg-dark">Venue</th>
-     <th class = "start_heading heading bg-dark">Start Date</th>
-     <th class = "time_heading heading bg-dark">Start Time</th>
-     <th class = "city_heading heading bg-dark">City</th>
-     <th class = "desc_heading heading bg-dark">Description</th>
-     <th class = "type_heading heading bg-dark">Event Type</th>
-     </tr>
-
+       <th class = "event_heading heading bg-dark" >Event Name</th>
+       <th class = "venue_heading heading bg-dark">Venue</th>
+       <th class = "start_heading heading bg-dark">Start Date</th>
+       <th class = "time_heading heading bg-dark">Start Time</th>
+       <th class = "city_heading heading bg-dark">City</th>
+       <th class = "desc_heading heading bg-dark">Description</th>
+       <th class = "type_heading heading bg-dark">Event Type</th>
+       </tr>
+     </thead>
+     <tbody id="table_of_events">
      <TR id="names">
      <TD class= "text-dark  ">SIMMENTAL BREEDER'S SWEEPSTAKES</TD>
      <TD class= "text-dark  "><a href= "https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
@@ -790,7 +792,8 @@
      <TD class= "text-dark  ">N/A</TD>
      <TD class= "text-dark  ">N/A</TD>
      </TR>
-     </table>
+   </tbody>
+ </table>
      <br>
      <br>
 
