@@ -35,7 +35,7 @@
                "img/papajohn_revised.jpg",
                "img/highlands.jpg",
                "img/thunder2.jpg",
-               "img/YUM_revised.jpg",
+               "img/Yum_revised.jpg",
                "img/waterfrontpark.jpg",
                "img/ali.jpg",
                "img/slugger2.jpg",
