@@ -1,0 +1,422 @@
+
+/* ======== FLEXBOX LAYOUT =========*/
+
+
+/* ======== styling =========*/
+body{
+  background-color: #7B0099;
+}
+
+TD{
+  text-align: center;
+  font-weight: bold;
+}
+
+TH{
+  color: #ff4444na;
+  text-align: center;
+  vertical-align:bottom;
+  text-decoration: underline;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+}
+
+.navbar-brand{
+  font-weight: bold;
+  color: #ff4444;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+}
+
+.nav-link{
+    vertical-align:bottom;
+}
+caption{
+  color: black;
+}
+h1{
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc,
+             0 2px 0 #c9c9c9,
+             0 3px 0 #bbb,
+             0 4px 0 #b9b9b9,
+             0 5px 0 #aaa,
+             0 6px 1px rgba(0,0,0,.1),
+             0 0 5px rgba(0,0,0,.1),
+             0 1px 3px rgba(0,0,0,.3),
+             0 3px 5px rgba(0,0,0,.2),
+             0 5px 10px rgba(0,0,0,.25),
+             0 10px 10px rgba(0,0,0,.2),
+             0 20px 20px rgba(0,0,0,.15);
+}
+
+h2 {
+   text-align:center;
+   text-shadow:5px 8px 10px #222;
+}
+
+h4 {
+    text-align:center;
+    text-shadow:3px 3px 3px #222;
+}
+
+.jumbotron {
+   color: #34A853;
+   background-size: cover;
+   padding-top: 6em;
+   margin-bottom: 20px;
+}
+
+.nav-link:hover{
+  transform: scale(1.5) rotate(-2deg);
+  transition: all .3s ease;
+}
+
+.nav-link{
+font-weight: bold;
+}
+
+.locations{
+  border-radius: 8%;
+}
+
+.locations:hover{
+  transform: scale(1.2);
+  transition: all .3s ease;
+}
+.img-rounded{
+  border-radius: 6%;
+}
+
+.title{
+  font-weight: bolder;
+}
+
+.lead {
+    font-weight: bold;
+    text-align: center;
+    text-decoration:underline;
+
+          text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+                 #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+    }
+}
+
+.intro{
+   font-size: 1.5 em;
+   font-weight: bold;
+   color: white;
+
+   padding-bottom: 20px;
+   text-align: center;
+ }
+
+
+.sub_cat{
+   font-weight:bold;
+   text-align: left;
+   padding-top: 12px;
+ }
+
+.main_footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 1em 0;
+  clear : both;
+  margin-top: 30px;
+}
+
+#email{
+    text-decoration: underline;
+    color: blue;
+}
+
+#banner {
+background: url("../img/thunder.jpg");
+background-position: bottom;
+background-size: 100% 100%;
+}
+
+
+/* ======== table formatting =========*/
+
+table{
+   border: 1px solid black;
+   width: 100%;
+   box-shadow: 5px 5px 5px gray;
+   padding-bottom: 1em;
+ }
+ .form_heading{
+   font-weight: bold;
+   text-decoration: underline;
+ }
+
+/* ======== accordion buttons =========*/
+section p{
+  overflow: hidden;
+  max-height: 0em;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  background: black;
+
+}
+section a{
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding: 10px;
+  background: black;
+  border-bottom: 2px solid gray;
+}
+section:target p{
+  max-height: 20em;
+  padding: 10px;
+}
+
+.doc{
+  width: 60px;
+  background: white;
+  margin: auto;
+}
+
+ /* ======== backgrounds =========*/
+ .home{
+
+     word-wrap: normal;
+     height: 15px;
+
+}
+ .fourth{
+     font-weight: bold;
+     text-align: center;
+     height: 75px;
+
+}
+ .churchill{
+     font-weight: bold;
+     text-align: center;
+     background-position:  bottom;
+     height: 75px;
+     align-items:
+}
+.comedy{
+    font-weight: bold;
+    text-align: center;
+    background-position: right center;
+    height: 75px;
+    align-items:
+}
+.kfec{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.headliners{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.amphi{
+    background-position: center bottom;
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.yum{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.kyca{
+    font-weight: bold;
+    text-align: center;
+    background-position: center bottom;
+    height: 75px;
+    align-items:
+}
+
+.mercury{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.dragway{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.palace{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.slugger{
+    font-weight: bold;
+    text-align: center;
+    background-position: center bottom;
+    height: 75px;
+    align-items:
+}
+.gocards{
+    font-weight: bold;
+    text-align: center;
+    background-position: center bottom;
+    height: 75px;
+    align-items:
+}
+.waterfront{
+    font-weight: bold;
+    text-align: center;
+    background-position: center bottom;
+    height: 75px;
+    align-items:
+}
+.mellwood{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.jbspeed{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.waylon{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+.library{
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    align-items:
+}
+
+.modal-body{
+  color: black;
+}
+
+/*========= media queries ------------------ */
+@media (min-width: 0px) {
+.container{
+  flex-direction: column;
+}
+
+.categories{
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-around;
+  flex-wrap: wrap;
+  order: 1;
+  }
+
+  .primary_list{
+    order: -1;
+  }
+
+}
+
+
+@media (min-width: 800px) {
+.container{
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+  margin:0;
+}
+
+.categories{
+  flex-direction: column;
+  justify-content: flex-start;
+  order: -1;
+  }
+
+.fourth{
+   background: url('../img/categories/4thstreetlive_revised.png');
+   box-shadow:  4px 4px black;
+}
+.churchill{
+   background: url('../img/categories/churchill.png');
+   box-shadow:  4px 4px black;
+}
+.comedy{
+   background: url('../img/categories/comedy_revised.png');
+   box-shadow:  4px 4px black;
+}
+.kfec{
+   background: url('../img/categories/KFEC_revised.png');
+   box-shadow:  4px 4px black;
+}
+.headliners{
+   background: url('../img/categories/headliners_revised.png');
+   box-shadow:  4px 4px black;
+}
+.amphi{
+   background: url('../img/categories/iroquois_revised.png');
+   box-shadow:  4px 4px black;
+}
+.yum{
+   background: url('../img/categories/yumcenter_revised.png');
+   box-shadow:  4px 4px black;
+}
+.kyca{
+   background: url('../img/categories/centerforthearts_revised.png');
+   box-shadow:  4px 4px black;
+   background-position: center bottom;
+}
+.mercury{
+   background: url('../img/categories/mercury_revised.png');
+   box-shadow:  4px 4px black;
+}
+.dragway{
+   background: url('../img/categories/ohiovalley_revised.png');
+   box-shadow:  4px 4px black;
+}
+.palace{
+   background: url('../img/categories/palace_revised.png');
+   box-shadow:  4px 4px black;
+}
+.slugger{
+   background: url('../img/categories/slugger_revised.png');
+   box-shadow:  4px 4px black;
+}
+.gocards{
+   background: url('../img/categories/gocards_revised.png');
+   box-shadow:  4px 4px black;
+}
+.waterfront{
+   background: url('../img/categories/waterfront_revised.png');
+   box-shadow:  4px 4px black;
+}
+.mellwood{
+   background: url('../img/categories/mellwood_revised.png');
+   box-shadow:  4px 4px black;
+}
+.jbspeed{
+   background: url('../img/categories/jbspeed_revised.png');
+   box-shadow:  4px 4px black;
+}
+.waylon{
+   background: url('../img/categories/waylon_revised.png');
+   box-shadow:  4px 4px black;
+}
+.library{
+   background: url('../img/categories/library_revised.png');
+   box-shadow:  4px 4px black;
+}
+
+
+} /*-----end media queries------*/
