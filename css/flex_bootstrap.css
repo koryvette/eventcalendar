@@ -1,7 +1,4 @@
 
-/* ======== FLEXBOX LAYOUT =========*/
-
-
 /* ======== styling =========*/
 body{
   background-color: white;
@@ -13,8 +10,11 @@ TD{
 
 TH{
   text-align: center;
-  vertical-align:bottom;
+  font-weight: bolder;
+  vertical-align: bottom;
   text-decoration: underline;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
 }
 .navbar-brand{
   font-weight: bold;
@@ -174,8 +174,9 @@ section:target p{
  /* ======== backgrounds =========*/
  .home{
      background-color: black;
-     word-wrap: break-word;
-     height: 15px;
+     text-align: center;
+     word-wrap:break-word;
+     height: 30px;
 }
  .fourth{
      font-weight: bold;
@@ -309,6 +310,8 @@ section:target p{
   justify-content:  space-around;
   flex-wrap: wrap;
   order: 1;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
   }
   .primary_list{
     order: -1;
@@ -329,6 +332,8 @@ section:target p{
   flex-direction: column;
   justify-content: flex-start;
   order: -1;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
   }
 
      .fourth{
@@ -406,9 +411,6 @@ section:target p{
         background: url('../img/categories/library_revised.png');
         box-shadow:  4px 4px black;
     }
-
-
-
 
 
 }
