@@ -5,10 +5,12 @@ body{
 }
 
 TD{
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
   text-align: center;
 }
 
 TH{
+  font-family: Lucida Bright,Georgia,serif;
   text-align: center;
   font-weight: bolder;
   vertical-align: bottom;
