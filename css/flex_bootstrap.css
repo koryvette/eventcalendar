@@ -6,11 +6,13 @@ body{
 
 TD{
   font-family: Copperplate,Copperplate Gothic Light,fantasy;
+  font-size: .9em;
   text-align: center;
 }
 
 TH{
   font-family: Lucida Bright,Georgia,serif;
+  font-size: 1.2em;
   text-align: center;
   font-weight: bolder;
   vertical-align: bottom;
