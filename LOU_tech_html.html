@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!D<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +9,6 @@
 
 <link rel="stylesheet" href="css/flex_bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 <script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -55,11 +54,47 @@
       <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Reset</button>
     </form>
+    </div>
   </div>
-</div>
+<button  class="btn btn-outline-info ml-auto" data-toggle="modal" data-target="#interest" data-show="true">View your events</button>
 
 </nav>
 <!--  navigation bar end  ------------>
+
+<!--start of MY Events list form -->
+<div class="modal " id="interest" role="dialog">
+<div class="modal-dialog">
+
+ <!-- Modal content-->
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">My Events</h4>
+   </div>
+   <div class="modal-body">
+
+<table id="eventlist" class = "table-warning text-danger table-responsive">
+  <thead>
+<TR id="table_header">
+  <th class = "event_heading heading bg-dark" >Event Name</th>
+  <th class = "venue_heading heading bg-dark">Venue</th>
+  <th class = "start_heading heading bg-dark">Start Date</th>
+  <th class = "time_heading heading bg-dark">Start Time</th>
+  </tr>
+</thead>
+</table>
+
+
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Add to Calendar</button>
+   </div>
+ </div>
+
+</div>
+</div>
+<!--end of MY Events list form -->
 
 <!--  jumbotron  --------------------->
 <div id="banner" class="jumbotron jumbotron-fluid">

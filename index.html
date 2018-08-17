@@ -10,11 +10,10 @@
 <link rel="stylesheet" href="css/flex_bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
-<script src="jquery.date-dropdowns.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script type="text/javascript" src="script/LOU_JS.js"></script>
+
 </head>
 <body class="bg-danger text-white">
 
@@ -55,15 +54,51 @@
       <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Reset</button>
     </form>
-
-
-
+    </div>
   </div>
-</div>
+<button  class="btn btn-outline-info ml-auto" data-toggle="modal" data-target="#interest" data-show="true">View your events</button>
 
-<!--- Social media links --->
 </nav>
 <!--  navigation bar end  ------------>
+
+<!--start of MY Events list form -->
+<div class="modal " id="interest" role="dialog">
+<div class="modal-dialog">
+
+ <!-- Modal content-->
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">My Events</h4>
+   </div>
+   <div class="modal-body">
+
+<table id="eventlist" class = "list table-warning text-danger table-responsive">
+  <thead>
+<TR>
+  <th class = "event_heading heading bg-dark" >Event Name</th>
+  <th class = "venue_heading heading bg-dark">Venue</th>
+  <th class = "start_heading heading bg-dark">Start Date</th>
+  <th class = "time_heading heading bg-dark">Start Time</th>
+  <th class = "city_heading heading bg-dark">City</th>
+  <th class = "desc_heading heading bg-dark">Description</th>
+  <th class = "type_heading heading bg-dark">Event Type</th>
+  </tr>
+</thead>
+ <tbody id='myNewTableBody'></tbody>
+</table>
+
+
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Add to Calendar</button>
+   </div>
+ </div>
+
+</div>
+</div>
+<!--end of MY Events list form -->
 
 <!--  jumbotron  --------------------->
 <div id="banner" class="jumbotron jumbotron-fluid">
@@ -81,20 +116,20 @@
 <!--  Social media buttons  -------------->
 <div class="container-fluid row text-center">
 <div class='col'>
-<div class="btn-group buttons"><a href="mailto:lvl1kdh@ups.com"><button type="button" class="btn btn-danger btn-lg fa fb fa-envelope-o fa-1x"></button></a></div>
+<div class="btn-group buttons social"><a href="mailto:lvl1kdh@ups.com"><button type="button" class="btn btn-danger btn-lg fa fb fa-envelope-o fa-1x"></button></a></div>
 </div>
 
 <div class='col'>
-<div class="btn-group buttons"><a href="https://www.facebook.com/kory.howell.92"><button type="button" class="btn btn-danger btn-lg fa fa-facebook fa-1x"id="target1"></button></a></div>
+<div class="btn-group buttons social"><a href="https://www.facebook.com/kory.howell.92"><button type="button" class="btn btn-danger btn-lg fa fa-facebook fa-1x"id="target1"></button></a></div>
 </div>
 <div class='col'>
-<div class="btn-group buttons"><a href="https://www.instagram.com/79koryvette/"><button type="button" class="btn btn-danger btn-lg fa fa-instagram fa-1x"></button></a></div>
+<div class="btn-group buttons social"><a href="https://www.instagram.com/79koryvette/"><button type="button" class="btn btn-danger btn-lg fa fa-instagram fa-1x"></button></a></div>
 </div>
 <div class='col'>
-<div class="btn-group buttons"><a href="https://www.linkedin.com/in/kory-howell-946315b8"><button type="button" class="btn btn-danger btn-lg fa fa-linkedin fa-1x"></button></a></div>
+<div class="btn-group buttons social"><a href="https://www.linkedin.com/in/kory-howell-946315b8"><button type="button" class="btn btn-danger btn-lg fa fa-linkedin fa-1x"></button></a></div>
 </div>
 <div class='col'>
-<div class="btn-group buttons"><a href="https://twitter.com/koryvette"><button type="button" class="btn btn-danger btn-lg fa fa-twitter fa-1x"></button></a></div>
+<div class="btn-group buttons social"><a href="https://twitter.com/koryvette"><button type="button" class="btn btn-danger btn-lg fa fa-twitter fa-1x"></button></a></div>
 </div>
 </div>
 <!--  end social media  -------------->
@@ -131,1553 +166,1166 @@
  <div class="col-md-9 col-lg-9 mr-auto">
    <div class="main_content">  <!--beginning of main webpage content -->
 
-     <h1 class="event-type"><strong>Upcoming events for JULY</strong></h1>
+     <h1 class="event-type"><strong>Upcoming events for AUGUST</strong></h1>
      <caption>Here's a current list of events happening around the 'Ville:</caption>
-     <table class = "event_table table-warning text-danger table-striped table-responsive">
-       <thead>
-     <TR id="table_header">
-       <th class = "event_heading heading bg-dark" >Event Name</th>
-       <th class = "venue_heading heading bg-dark">Venue</th>
-       <th class = "start_heading heading bg-dark">Start Date</th>
-       <th class = "time_heading heading bg-dark">Start Time</th>
-       <th class = "city_heading heading bg-dark">City</th>
-       <th class = "desc_heading heading bg-dark">Description</th>
-       <th class = "type_heading heading bg-dark">Event Type</th>
-       </tr>
-     </thead>
-     <tbody id="table_of_events">
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Indians</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t458" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/3/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">July 3 Fireworks Extravaganza, Stars & Stripes Hat Giveaway, Baseball Bingo</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Wed & Fri Test or Grudge 6-10 PM</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/3/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Waterfront Yoga</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/3/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/4/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">RUN FOR THE ROSES</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/4/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">NAT'L JR SUMMER SPECTACULAR & CONFERENCE</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Internet Basics Newburg</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gray Street Farmers Market</TD>
-       <TD class= "text-dark  "><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">10:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Cartooning Basics South Central</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Mapping Spaces Shively</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
-       <TD class= "text-dark  ">7/5/2018</TD>
-       <TD class= "text-dark  ">15:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">An Evening with Guided By Voices Celebrating Headliners Music Hall's 20th Anniversary&#10;<BR></TD>
-       <TD class= "text-dark  "><a  href="http://headlinerslouisville.com/events/" target="_blank">Headliners Music Hall</a></TD>
-       <TD class= "text-dark  ">7/6/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/6/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Live! After Five</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/6/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t459" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/6/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Christmas in July, Friday Night Fireworks, &quot;Drain the Keg&quot; Friday</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">KY2600 Monthly Meeting </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">KY2600 </a></TD>
-       <TD class= "text-dark  ">7/6/2018</TD>
-       <TD class= "text-dark  ">17:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Harry Potter and the Prisoner of Azkaban in Concert</TD>
-       <TD class= "text-dark  "><a  href="http://www.kentuckycenter.org/" target="_blank">Ky Center for the Arts</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t460" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Party at the Park, Friends & Family Night</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Outlaws at the Valley/Bracket</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Outdoor Exploration Main Library</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/7/2018</TD>
-       <TD class= "text-dark  ">15:30:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Mud Hens</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t461" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/8/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/8/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Game Creators Meetup / Kentucky Fried Pixels Marketing Day </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville Makes Games! </a></TD>
-       <TD class= "text-dark  ">7/8/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">APACHE PASCHAL MEMORIAL SHOWCASE</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/9/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Microsoft Word 1 Newburg</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/9/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/9/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">What Every Developer Should Know About Statistics </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Java Users Group of Greater Louisville </a></TD>
-       <TD class= "text-dark  ">7/9/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">BATTLE OF THE BORO</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/10/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Monthly Tech Leader Coffee and Discussion </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville Tech Leaders Meetup </a></TD>
-       <TD class= "text-dark  ">7/10/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">July WordPress Meetup: SEO </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">WordPress Louisville </a></TD>
-       <TD class= "text-dark  ">7/10/2018</TD>
-       <TD class= "text-dark  ">18:15:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Waterfront Yoga</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/10/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">The Pretenders</TD>
-       <TD class= "text-dark  "><a  href="http://www.louisvillepalace.com/#http://www.louisvillepalace.com/" target="_blank">Palace Theatre</a></TD>
-       <TD class= "text-dark  ">7/10/2018</TD>
-       <TD class= "text-dark  ">20:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">ALEA 2018 ANNUAL CONFERENCE AND EXHIBITION*</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">U-Jam Fitness</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computer Basics Jeffersontown</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Internet Basics Iroquois</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Fairdale</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">11:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gentle Yoga</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank"> Main Library</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">The Louisville Open Source Programming Meetup Group Monthly Meetup </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">The Louisville Open Source Programming Meetup Group </a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Journey with Def Leppard</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/11/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Promising to be the Tour of the Year, two of the world's greatest rock bands - DEF LEPPARD and JOURNEY - are teaming up for a massive co-headlining North American tour composed of both stadium and arena concerts, half the shows being closed by Journey and</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t462" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Thirsty Thursday</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Email Basics Newburg</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gray Street Farmers Market</TD>
-       <TD class= "text-dark  "><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">10:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Game Creators Meetup / Kentucky Fried Pixels Release Prep Day </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville Makes Games! </a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Stone Carving with Al & Penny Nelson Fern Creek</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">15:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Comedy Improv Basics Shawnee</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">17:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Q&A w/ Ryan Ripley </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Derby City Agile </a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">17:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Ionic and Angular 4 </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Ionic Louisville </a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Makes Games! - Art Night </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville Makes Games! </a></TD>
-       <TD class= "text-dark  ">7/12/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/13/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Forecastle Fest 2018</TD>
-       <TD class= "text-dark  "><a  href="www.forecastlefest.com#http://www.forecastlefest.com" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/13/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">THE FORECASTLE FESTIVAL is a port-of-call where the world gathers to experience the best in Music, Art, and Activism. A celebration of sights, sounds, and sustainability, Forecastle connects travelers North, South, East, and West. Merging entertainment w</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Fri Night Shootout/Test/Grudge Racing</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/13/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t463" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/13/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Jake the Diamond Dog, Mesh Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">BALLIN UNDER 1 ROOF</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Diesel Race</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t464" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Party at the Park</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Yoga </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">13:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/14/2018</TD>
-       <TD class= "text-dark  ">15:30:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Clippers</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t465" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/15/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Princess & Pirate Night, Kids Eat Free, Kids Inflatable FunZone, , Kids Run the Bases, Appearance by the Zooperstars</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/15/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/16/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Mini Me Yoga Family Fun Time </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Middletown</a></TD>
-       <TD class= "text-dark  ">7/16/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computer Basics 1 & 2 Fern Creek</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computer Basics 1 Shively</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computer Basics Main Library</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">13:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Mad Science: Che-Mystery Middletown</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Weekly 1-on-1 Computer Basics Western</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Developer Panel - Getting the first job in the industry </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Tech Foundations Louisville </a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">18:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Waterfront Yoga</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/17/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Portland</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Wed Night Test or Grudge 6-10 PM</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Internet Basics Jeffersontown</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Fairdale</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">11:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Going All In With Functional Programming- The ES6 Edition by Ed Charbeneau </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">JSLou - Louisville's JavaScript Group </a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">18:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Monthly Meeting </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Learn Swift Louisville </a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">18:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gentle Yoga </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank"> Main Library</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Writing Workshop Shively</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">LOU City vs. Toronto FC II</TD>
-       <TD class= "text-dark  "><a  href="https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville .NET Meetup Group </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville .NET Meetup Group </a></TD>
-       <TD class= "text-dark  ">7/18/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gray Street Farmers Market</TD>
-       <TD class= "text-dark  "><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
-       <TD class= "text-dark  ">7/19/2018</TD>
-       <TD class= "text-dark  ">10:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/19/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Mini Me Yoga </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
-       <TD class= "text-dark  ">7/19/2018</TD>
-       <TD class= "text-dark  ">13:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
-       <TD class= "text-dark  ">7/19/2018</TD>
-       <TD class= "text-dark  ">15:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">NHDRO Motorcycle Race</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/20/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">TFN CAMPS AND CLINICS HOOPFEST</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/20/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Shania Twain: NOW</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/20/2018</TD>
-       <TD class= "text-dark  ">19:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Shania Twain is hitting the road in support of her new album, Now. She'll stop at KFC Yum! Center in Louisville on Friday, July 20, 2018! &#13;&#10;<BR>Shania is a five-time GRAMMY Award-winner and the reigning Queen of Country Pop. With more than 90 million albums s</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">LOUISVILLE EQUESTRIAN CENTER*</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">NuLu Luau</TD>
-       <TD class= "text-dark  "><a  href="https://nulubusinessassocation.wildapricot.org/event-2818428" target="_blank">NULU</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Festival</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Yoga </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">13:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Your Yoga For Health </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">13:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">15:30:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Smashing Pumpkins &quot;Shiny and Oh So Bright Tour&quot;</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">GRAMMY - Award-winning, acclaimed alternative rock pioneers The Smashing Pumpkins today announced the Shiny And Oh So Bright Tour, their first tour in nearly 20 years to feature founding members Billy Corgan, Jimmy Chamberlin, and James Iha. &#13;&#10;<BR>The monument</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Charlotte Independence</TD>
-       <TD class= "text-dark  "><a  href="https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">19:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Turn The Page - Tribute to Bob Seger</TD>
-       <TD class= "text-dark  "><a  href="http://www.mercuryballroom.com/" target="_blank">Mercury Ballroom</a></TD>
-       <TD class= "text-dark  ">7/21/2018</TD>
-       <TD class= "text-dark  ">21:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/22/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Robbie Valentine Summer Basketball Camp</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/23/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/23/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Microsoft Excel 3 Main Library</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/23/2018</TD>
-       <TD class= "text-dark  ">13:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t466" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/24/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Dollar Menu Night, Baseball Bingo</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Robbie Valentine Summer Basketball Camp</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/24/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Waterfront Yoga</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/24/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Portland</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t467" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Quarter Hot Dogs</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Microsoft Excel 1 Jeffersontown</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Robbie Valentine Summer Basketball Camp</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Email Basics Iroquois</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Fairdale</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">11:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">WorkForce Development: WinWay for Beginners Main Library</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">13:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Joke Writing with Judy Carney Western</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">WFPK Waterfront Wednesday</TD>
-       <TD class= "text-dark  "><a  href="www.wfpk.org;#http://www.wfpk.org;" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">17:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Free concert series</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gentle Yoga</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank"> Main Library</a></TD>
-       <TD class= "text-dark  ">7/25/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Bisons</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t468" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Thirsty Thursday, Singles' Night</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Robbie Valentine Summer Basketball Camp</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Gray Street Farmers Market</TD>
-       <TD class= "text-dark  "><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">10:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Microsoft Excel 4 Main Library</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">13:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">15:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">DerbyPy Monthly Meetup </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">DerbyPy - Louisville Python Meetup </a></TD>
-       <TD class= "text-dark  ">7/26/2018</TD>
-       <TD class= "text-dark  ">18:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Bats Baseball Fireworks</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/bats-fireworks-0407/" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/27/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Friday night fireworks by the Louisville Bats. Show begins right after the game. For game tickets call 502.212.BATS or go to www.batsbaseball.com.</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t469" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/27/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Throwback Weekend, Throwback Colonels Hat Giveaway, Friday Night Fireworks, , &quot;Drain the Keg&quot; Friday</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">TFN CAMPS AND CLINICS JAMFEST</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/27/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t470" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Throwback Weekend, Pee Wee Reese Replica Statue Giveaway, Party at the Park</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Outlaw 4.70/Combo/Bracket/Double Points</TD>
-       <TD class= "text-dark  "><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">SIMMENTAL BREEDER'S SWEEPSTAKES</TD>
-       <TD class= "text-dark  "><a  href="https://kyexpo.org/kec/eventCalendar.aspx" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Dr. Ed Morgan / KIWANIS Grand Slam 4 Miler</TD>
-       <TD class= "text-dark  "><a  href="www.rivercityraces.com#http://www.rivercityraces.com" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Race starts and finishes behind Slugger Field. Entry includes ticket to July 28th baseball game. Race is to benefit Big Brothers/Big Sisters and the Heuser Hearing & Language Academy.</TD>
-       <TD></TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">10:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Yoga </TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">13:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">15:30:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Sugarland &quot;Still the Same&quot; Tour</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Award-winning Country duo Sugarland announced their highly-anticipated return to the stage with the Still The Same Tour, beginning this Spring in the U.S. With numerous Grammy, ACM and CMA Awards, chart-topping hits and MULTI-PLATINUM sales.</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Miranda Sings Live... No Offense</TD>
-       <TD class= "text-dark  "><a  href="http://www.kentuckycenter.org/" target="_blank">Ky Center for the Arts</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">20:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Saved By The 90's</TD>
-       <TD class= "text-dark  "><a  href="http://www.mercuryballroom.com/" target="_blank">Mercury Ballroom</a></TD>
-       <TD class= "text-dark  ">7/28/2018</TD>
-       <TD class= "text-dark  ">21:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Louisville Bats vs. Red Wings</TD>
-       <TD class= "text-dark  "><a  href="http://www.milb.com/index.jsp?sid=t471" target="_blank">Slugger Field</a></TD>
-       <TD class= "text-dark  ">7/29/2018</TD>
-       <TD></TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases</TD>
-       <TD class= "text-dark  ">Sports</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Farmer's Market</TD>
-       <TD class= "text-dark  "><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
-       <TD class= "text-dark  ">7/29/2018</TD>
-       <TD class= "text-dark  ">8:00:00</TD>
-       <TD class= "text-dark  ">New Albany</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Shopping</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Rod Stewart with special guest Cyndi Lauper</TD>
-       <TD class= "text-dark  "><a  href="https://www.kfcyumcenter.com/" target="_blank">KFC YUM Center</a></TD>
-       <TD class= "text-dark  ">7/29/2018</TD>
-       <TD class= "text-dark  ">19:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Singer/Songwriter Rod Stewart, the two-time Rock & Roll Hall of Fame-music icon, today announced plans for an extensive North American summer tour.  Following the incredible success and rave reviews for their 2017 summer tour, Stewart has invited the lege</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Computers by Appointment Southwest</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/30/2018</TD>
-       <TD class= "text-dark  ">12:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Internet Basics 1 South Central</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/30/2018</TD>
-       <TD class= "text-dark  ">14:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Tory Lanez</TD>
-       <TD class= "text-dark  "><a  href="http://www.mercuryballroom.com/" target="_blank">Mercury Ballroom</a></TD>
-       <TD class= "text-dark  ">7/30/2018</TD>
-       <TD class= "text-dark  ">20:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Live Events</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Resume Building Shively</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Resume Building Shively</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">9:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">4-H Presents Physics Zoo Middletown</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Weekly 1-on-1 Computer Basics Western</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">14:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Playing with Electric Circuits Crescent Hill</TD>
-       <TD class= "text-dark  "><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">14:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Education</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Tech Leader Happy Hour </TD>
-       <TD class= "text-dark  "><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&radius=50&userFreeform=Louisville%2C+KY&mcId=z40201&mcName=Louisville%2C+KY" target="_blank">Louisville Tech Leaders Meetup </a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">17:30:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">N/A</TD>
-       <TD class= "text-dark  ">Tech</TD>
-       </TR>
-       <TR>
-       <TD class= "text-dark  ">Waterfront Yoga</TD>
-       <TD class= "text-dark  "><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/" target="_blank">Waterfront Park</a></TD>
-       <TD class= "text-dark  ">7/31/2018</TD>
-       <TD class= "text-dark  ">19:00:00</TD>
-       <TD class= "text-dark  ">Louisville</TD>
-       <TD class= "text-dark  ">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
-       <TD class= "text-dark  ">Fitness</TD>
-       </TR>
-   </tbody>
- </table>
+ <table class = "list event_table table-warning text-danger table-striped table-responsive">
+   <thead>
+ <TR id="table_header">
+   <th class = "event_heading heading bg-dark" >Event Name</th>
+   <th class = "venue_heading heading bg-dark">Venue</th>
+   <th class = "start_heading heading bg-dark">Start Date</th>
+   <th class = "time_heading heading bg-dark">Start Time</th>
+   <th class = "city_heading heading bg-dark">City</th>
+   <th class = "desc_heading heading bg-dark">Description</th>
+   <th class = "type_heading heading bg-dark">Event Type</th>
+ </TR>
+ </thead>
+ <tbody id="table_of_events">
+   <TR>
+   <TD class= "text-dark">Bluegrass World Series: Jasper vs FCSL (3:30 PM); Louisville vs Hattiesburg (7 PM)</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t472" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Chipper Jones Hall of Fame Game</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computer Basics Jeffersontown</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">9:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computer Basics 1 Iroquois</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computers by Appointment Fairdale</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">11:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Weekly 1-on-1 Resume Assistance Western</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">12:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computer Basics Main Library</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">13:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Internet Basics 2 South Central</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">14:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gentle Yoga</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank"> Main Library</a></TD>
+   <TD class= "text-dark">8/1/2018</TD>
+   <TD class= "text-dark">18:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">NATIONAL STREET RODS ASSOCIATION NATIONALS</TD>
+   <TD class= "text-dark"><a  href="#https://kyexpo.org/kec/eventCalendar.aspx#" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Festival</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computer Basics Newburg</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD class= "text-dark">9:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gray Street Farmers Market</TD>
+   <TD class= "text-dark"><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD class= "text-dark">10:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computers by Appointment Southwest</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD class= "text-dark">12:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD class= "text-dark">15:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Dan and Phil World Tour 2018 - Interactive Introverts</TD>
+   <TD class= "text-dark"><a  href="http://www.kentuckycenter.org/" target="_blank">Ky Center for the Arts</a></TD>
+   <TD class= "text-dark">8/2/2018</TD>
+   <TD class= "text-dark">20:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Bluegrass World Series: Sterling vs Dubois County (3:30 PM); Louisville vs FCSL (7 PM)</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t473" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/3/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Louisville Salutes Johnny Bench Game</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Live! After Five</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/3/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD></TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">KY2600 Monthly Meeting </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">KY2600 </a></TD>
+   <TD class= "text-dark">8/3/2018</TD>
+   <TD class= "text-dark">17:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Trolley Hop KFP Launch Party! </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">Louisville Makes Games! </a></TD>
+   <TD class= "text-dark">8/3/2018</TD>
+   <TD class= "text-dark">18:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Outlaws at the Valley/Bracket</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Intro to Web Concepts Workshop </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">Girl Develop It Louisville </a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">9:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">How to Make a Rocket Launcher Newburg</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">11:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Yoga</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">13:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Your Yoga For Health </TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Shawnee</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">13:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Everything You Wanted to Know About a Plant Based Diet, But Were Afraid to Ask Highlands/Shelby Park</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">14:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Outdoor Exploration Main Library</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">14:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Robot Challenge Portland</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">14:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/4/2018</TD>
+   <TD class= "text-dark">15:30:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Nahko &amp; Medicine for the People with Raye Zaragoza&#10;<BR></TD>
+   <TD class= "text-dark"><a  href="http://headlinerslouisville.com/events/" target="_blank">Headliners Music Hall</a></TD>
+   <TD class= "text-dark">8/5/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/5/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">LOU City vs. Indy Eleven</TD>
+   <TD class= "text-dark"><a  href="https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/5/2018</TD>
+   <TD class= "text-dark">17:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Internet Basics Newburg</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/6/2018</TD>
+   <TD class= "text-dark">9:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Computers by Appointment Southwest</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/6/2018</TD>
+   <TD class= "text-dark">12:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Microsoft Word 1 Main Library</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/6/2018</TD>
+   <TD class= "text-dark">13:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">2018 PRE-FAIR QUARTER HORSE SHOW</TD>
+   <TD class= "text-dark"><a  href="#https://kyexpo.org/kec/eventCalendar.aspx#" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Festival</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Red Sox</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t474" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Dollar Menu Night, Baseball Bingo</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Internet Basics Fern Creek</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">9:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Microsoft Word 2 Main Library</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">13:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Weekly 1-on-1 Computer Basics Western</TD>
+   <TD class= "text-dark"><a  href="http://www.lfpl.org/" target="_blank">Free Public Library</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">14:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Education</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Waterfront Yoga</TD>
+   <TD class= "text-dark"><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#" target="_blank">Waterfront Park</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">19:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">An Evening with Lindsey Stirling</TD>
+   <TD class= "text-dark"><a  href="http://www.kentuckycenter.org/" target="_blank">Ky Center for the Arts</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">20:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">An Evening With Lindsey Stirling</TD>
+   <TD class= "text-dark"><a  href="https://www.iroquoisamphitheater.com/" target="_blank">Iroquois Amphitheater</a></TD>
+   <TD class= "text-dark">8/7/2018</TD>
+   <TD class= "text-dark">20:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/8/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Red Sox</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t475" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/8/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Hump Day Buffet</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed Night Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/8/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Red Sox</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t476" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/9/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Thirsty Thursday</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gray Street Farmers Market</TD>
+   <TD class= "text-dark"><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
+   <TD class= "text-dark">8/9/2018</TD>
+   <TD class= "text-dark">10:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
+   <TD class= "text-dark">8/9/2018</TD>
+   <TD class= "text-dark">15:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Fri Night Shootout/Test/Grudge Racing</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/10/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. IronPigs</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t477" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/10/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Friday Night Fireworks, &quot;Drain the Keg&quot; Friday</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Black Moth Super Rainbow with The Stargazer Lilies &amp; Air Credits&#10;<BR></TD>
+   <TD class= "text-dark"><a  href="http://headlinerslouisville.com/events/" target="_blank">Headliners Music Hall</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Combo/Bracket</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. IronPigs</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t478" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">MARVEL Super Hero Night #2 (Hulk), Hulk Bobblehead Giveaway, Party at the Park</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">MARVEL Super Hero Nights</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t416##" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">15:30:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">The Four Horsemen - Tribute to Metallica</TD>
+   <TD class= "text-dark"><a  href="http://www.mercuryballroom.com/" target="_blank">Mercury Ballroom</a></TD>
+   <TD class= "text-dark">8/11/2018</TD>
+   <TD class= "text-dark">21:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. IronPigs</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t479" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/12/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Kids Eat Free, Kids Inflatable FunZone, Kids Run the Bases, , Team Card Set Giveaway</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/12/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Waterfront Yoga</TD>
+   <TD class= "text-dark"><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#" target="_blank">Waterfront Park</a></TD>
+   <TD class= "text-dark">8/14/2018</TD>
+   <TD class= "text-dark">19:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/15/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">U-Jam Fitness</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/15/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD></TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/15/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/15/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">*SOLD OUT* Tyler Childers </TD>
+   <TD class= "text-dark"><a  href="http://headlinerslouisville.com/events/" target="_blank">Headliners Music Hall</a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">2018 KENTUCKY STATE FAIR</TD>
+   <TD class= "text-dark"><a  href="#https://kyexpo.org/kec/eventCalendar.aspx#" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Festival</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gray Street Farmers Market</TD>
+   <TD class= "text-dark"><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD class= "text-dark">10:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Demystifying containers including Azure Kubernetes &amp; Genscape PaaS Journey </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">Louisville Microsoft Azure User Group </a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD class= "text-dark">11:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD class= "text-dark">15:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/16/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/17/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/17/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Bracket/Jr Dragster Challenge</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">15:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">15:30:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">LOU City vs. Nashville SC</TD>
+   <TD class= "text-dark"><a  href="https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/18/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/19/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/19/2018</TD>
+   <TD class= "text-dark">13:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Cirque Du Soleil Corteo</TD>
+   <TD class= "text-dark"><a  href="#https://www.kfcyumcenter.com/#" target="_blank">KFC YUM Center</a></TD>
+   <TD class= "text-dark">8/19/2018</TD>
+   <TD class= "text-dark">17:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">There�s a joyous procession of revellers headed to Louisville � can you hear it? &#13;&#10;<BR>Corteo, which means &quot;cortege&quot; in Italian, is a joyous procession, a festive parade imagined by a clown. The show brings together the passion of the actor with the grace and</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Mud Hens</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t480" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/21/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Dollar Menu Night, Baseball Bingo, Bark in the Park</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Waterfront Yoga</TD>
+   <TD class= "text-dark"><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#" target="_blank">Waterfront Park</a></TD>
+   <TD class= "text-dark">8/21/2018</TD>
+   <TD class= "text-dark">19:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/22/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Mud Hens</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t481" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/22/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Hump Day Buffet</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/22/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Mud Hens</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t482" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/23/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Thirsty Thursday</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gray Street Farmers Market</TD>
+   <TD class= "text-dark"><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
+   <TD class= "text-dark">8/23/2018</TD>
+   <TD class= "text-dark">10:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
+   <TD class= "text-dark">8/23/2018</TD>
+   <TD class= "text-dark">15:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">DerbyPy Monthly Meetup </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">DerbyPy - Louisville Python Meetup </a></TD>
+   <TD class= "text-dark">8/23/2018</TD>
+   <TD class= "text-dark">18:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Indians</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t483" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/24/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Friday Night Fireworks, Friends &amp; Family Night, &quot;Drain the Keg&quot; Friday</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/24/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Lunch and Learn: IT Security Panel Discussion: Hear the latest news in Security </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">HDI Kentuckiana - our Local HDI Chapter </a></TD>
+   <TD class= "text-dark">8/24/2018</TD>
+   <TD class= "text-dark">11:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Bracket/Double Points</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Louisville Bats vs. Indians</TD>
+   <TD class= "text-dark"><a  href="http://www.milb.com/index.jsp?sid=t484" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Boy Scout Night, Party at the Park</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.bardstownroadfarmersmarket.com/" target="_blank">Bardstown Rd. Presb. Church</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://smfarmersmarket.beargrasschristian.org/" target="_blank">St. Matthew's</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.jeffersontownky.gov/304/Farmers-Market" target="_blank">Jeffersontown</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="https://www.facebook.com/pg/schnitzelburgcommunityfarmersmarket/about/?ref=page_internal" target="_blank">Schnitzelburg </a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://douglassloopfarmersmarket.com/" target="_blank">Douglas Loop</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">10:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">15:30:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Emporium &amp; Production Simple Presents An Evening With Umphrey's McGee</TD>
+   <TD class= "text-dark"><a  href="https://www.iroquoisamphitheater.com/" target="_blank">Iroquois Amphitheater</a></TD>
+   <TD class= "text-dark">8/25/2018</TD>
+   <TD class= "text-dark">20:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://newalbanyfarmersmarket.com/" target="_blank">New Albany</a></TD>
+   <TD class= "text-dark">8/26/2018</TD>
+   <TD class= "text-dark">8:00:00</TD>
+   <TD class= "text-dark">New Albany</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">AC Ent. &amp; Production Simple Present The Flaming Lips</TD>
+   <TD class= "text-dark"><a  href="https://www.iroquoisamphitheater.com/" target="_blank">Iroquois Amphitheater</a></TD>
+   <TD class= "text-dark">8/26/2018</TD>
+   <TD class= "text-dark">20:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Waterfront Yoga</TD>
+   <TD class= "text-dark"><a  href="https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#https://louisvillewaterfront.com/plan-your-visit/calendar/yoga-501/#" target="_blank">Waterfront Park</a></TD>
+   <TD class= "text-dark">8/28/2018</TD>
+   <TD class= "text-dark">19:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Come enjoy the beauty of the waterfront and the relaxation of yoga at the Brown-Forman Amphitheater on the river. Classes will be held Tuesdays at 7pm, weather permitting. Beginners are welcome!&#13;&#10;<BR>Bring yourself, your mat and good vibes!&#13;&#10;<BR>Admission: $5</TD>
+   <TD class= "text-dark">Fitness</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.4thstlive.com/" target="_blank">4th Street Live!</a></TD>
+   <TD class= "text-dark">8/29/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/29/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">WFPK Waterfront Wednesday</TD>
+   <TD class= "text-dark"><a  href="www.wfpk.org;#http://www.wfpk.org;#" target="_blank">Waterfront Park</a></TD>
+   <TD class= "text-dark">8/29/2018</TD>
+   <TD class= "text-dark">17:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">Free concert series</TD>
+   <TD class= "text-dark">Live Events</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Discuss Business/Industrial Use-Cases for Blockchain </TD>
+   <TD class= "text-dark"><a  href="https://www.meetup.com/find/events/tech/?allMeetups=false&amp;radius=50&amp;userFreeform=Louisville%2C+KY&amp;mcId=z40201&amp;mcName=Louisville%2C+KY" target="_blank">Louisville Blockchain </a></TD>
+   <TD class= "text-dark">8/29/2018</TD>
+   <TD class= "text-dark">18:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Tech</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Gray Street Farmers Market</TD>
+   <TD class= "text-dark"><a  href="http://louisville.edu/sphis/gsfm" target="_blank">UofL</a></TD>
+   <TD class= "text-dark">8/30/2018</TD>
+   <TD class= "text-dark">10:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Farmer's Market</TD>
+   <TD class= "text-dark"><a  href="http://www.phoenixhillna.org/phoenix-hill-nulu-farmers-market.html" target="_blank">NuLu</a></TD>
+   <TD class= "text-dark">8/30/2018</TD>
+   <TD class= "text-dark">15:00:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">KENTUCKY FLEA MARKET LABOR DAY SPECTACULAR</TD>
+   <TD class= "text-dark"><a  href="#https://kyexpo.org/kec/eventCalendar.aspx#" target="_blank">Ky Fair and Expo Center (KFEC)</a></TD>
+   <TD class= "text-dark">8/31/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Shopping</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">Wed &amp; Fri Test or Grudge 6-10 PM</TD>
+   <TD class= "text-dark"><a  href="http://www.ohiovalleydragway.com/" target="_blank">Ohio Valley Raceway</a></TD>
+   <TD class= "text-dark">8/31/2018</TD>
+   <TD></TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+   <TR>
+   <TD class= "text-dark">LOU City vs. Charleston Battery</TD>
+   <TD class= "text-dark"><a  href="https://www.louisvillecityfc.com/" target="_blank">Slugger Field</a></TD>
+   <TD class= "text-dark">8/31/2018</TD>
+   <TD class= "text-dark">19:30:00</TD>
+   <TD class= "text-dark">Louisville</TD>
+   <TD class= "text-dark">N/A</TD>
+   <TD class= "text-dark">Sports</TD>
+   </TR>
+</tbody>
+</table>
      <br>
      <br>
 
