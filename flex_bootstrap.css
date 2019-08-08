@@ -1,35 +1,29 @@
 
-/* ======== FLEXBOX LAYOUT =========*/
-
-
 /* ======== styling =========*/
 body{
-  background-color: #7B0099;
+  background-color: white;
 }
 
 TD{
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
+  font-size: .9em;
   text-align: center;
-  font-weight: bold;
 }
 
 TH{
-  color: #ff4444na;
+  font-family: Lucida Bright,Georgia,serif;
+  font-size: 1.2em;
   text-align: center;
-  vertical-align:bottom;
+  font-weight: bolder;
+  vertical-align: bottom;
   text-decoration: underline;
   text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
              #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
 }
-
 .navbar-brand{
   font-weight: bold;
-  color: #ff4444;
   text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
              #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
-}
-
-.nav-link{
-    vertical-align:bottom;
 }
 caption{
   color: black;
@@ -61,7 +55,7 @@ h4 {
 }
 
 .jumbotron {
-   color: #34A853;
+   color: #fe4a49;
    background-size: cover;
    padding-top: 6em;
    margin-bottom: 20px;
@@ -100,7 +94,7 @@ font-weight: bold;
           text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
                  #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
     }
-}
+
 
 .intro{
    font-size: 1.5 em;
@@ -151,6 +145,9 @@ table{
    font-weight: bold;
    text-decoration: underline;
  }
+ #tableLayout{
+  border-radius: 9%;
+ }
 
 /* ======== accordion buttons =========*/
 section p{
@@ -183,130 +180,243 @@ section:target p{
 
  /* ======== backgrounds =========*/
  .home{
-
-     word-wrap: normal;
-     height: 15px;
-
+     background-color: black;
+     text-align: center;
+     word-wrap:break-word;
+     height: 30px;
 }
  .fourth{
      font-weight: bold;
      text-align: center;
      height: 75px;
-
 }
  .churchill{
      font-weight: bold;
      text-align: center;
      background-position:  bottom;
      height: 75px;
-     align-items:
 }
 .comedy{
     font-weight: bold;
     text-align: center;
     background-position: right center;
     height: 75px;
-    align-items:
 }
 .kfec{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .headliners{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .amphi{
     background-position: center bottom;
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .yum{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .kyca{
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
     height: 75px;
-    align-items:
 }
 
 .mercury{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .dragway{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .palace{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .slugger{
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
     height: 75px;
-    align-items:
 }
 .gocards{
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
     height: 75px;
-    align-items:
 }
 .waterfront{
     font-weight: bold;
     text-align: center;
     background-position: center bottom;
     height: 75px;
-    align-items:
 }
 .mellwood{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .jbspeed{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .waylon{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 .library{
     font-weight: bold;
     text-align: center;
     height: 75px;
-    align-items:
 }
 
 .modal-body{
   color: black;
+}
+/*========= Quick View formatting ------------------ */
+.event-thumb{
+  width: 240px;
+  height: auto;
+  display: inline-block;
+  margin: 8px;
+  float: left;
+}
+.event-thumb-image{
+  width: 240px;
+  height: auto;
+  display: inline-block;
+  border: 1px solid #ffb777;
+  position: relative;
+  overflow: hidden;
+}
+.event-thumb-image img{
+  width: 100%;
+}
+.quickview-title{
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(255,120,0,0.9);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+}
+.event-thumb-image:hover .quickview-title{
+  top: 45%;
+  opacity: 1;
+}
+.event-thumb-title{
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  font-weight: normal;
+}
+.event-thumb-title h3 {
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 16px;
+  color: #303030;
+}
+.event-thumb-title h3 span{
+  color: #ff7800;
+}
+.event-view{
+  position: absolute;
+  display: none;
+  width: 800px;
+  height: auto;
+  padding: 25px;
+  border: 1px solid #ff7800;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0,3);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  z-index: 100;
+}
+.close-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 5px 10px 0;
+  font-size: 22px;
+  color: #929292;
+  transform: scaleY(0.8);
+  cursor: pointer;
+}
+.event-big-image{
+  width: 45%;
+  height: auto;
+  display: inline-block;
+  float: left;
+}
+.event-big-image img{
+  width: 100%;
+  border: 3px solid #333;
+}
+.event-big-desc{
+  width: 48%;
+  height: auto;
+  display: inline-block;
+  float: right;
+  padding-right: 20px;
+}
+.event-big-desc h2{
+  margin: 0;
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+.event-big-desc h5{
+  font-weight: lighter;
+  color: #2a2a2a;
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+.event-big-desc h6{
+  width: 100%;
+  float: left;
+  margin: 0px;
+  padding-bottom: 15px;
+}
+.event-big-desc h6 a{
+  color: #b1b1b1;
+  font-size: 16px;
+  margin-right: 25px;
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+.layout{
+  margin-right: 15px;
+  float: right;
+}
+#tableLayout{
+  display: none;
 }
 
 /*========= media queries ------------------ */
@@ -321,102 +431,107 @@ section:target p{
   justify-content:  space-around;
   flex-wrap: wrap;
   order: 1;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
   }
-
   .primary_list{
     order: -1;
   }
 
+
 }
 
 
-@media (min-width: 800px) {
+@media (min-width: 992px) {
 .container{
   flex-direction: row;
   justify-content: center;
   padding: 0;
   margin:0;
 }
-
 .categories{
   flex-direction: column;
   justify-content: flex-start;
   order: -1;
+  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
+             #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
   }
 
-.fourth{
-   background: url('../img/categories/4thstreetlive_revised.png');
-   box-shadow:  4px 4px black;
-}
-.churchill{
-   background: url('../img/categories/churchill.png');
-   box-shadow:  4px 4px black;
-}
-.comedy{
-   background: url('../img/categories/comedy_revised.png');
-   box-shadow:  4px 4px black;
-}
-.kfec{
-   background: url('../img/categories/KFEC_revised.png');
-   box-shadow:  4px 4px black;
-}
-.headliners{
-   background: url('../img/categories/headliners_revised.png');
-   box-shadow:  4px 4px black;
-}
-.amphi{
-   background: url('../img/categories/iroquois_revised.png');
-   box-shadow:  4px 4px black;
-}
-.yum{
-   background: url('../img/categories/yumcenter_revised.png');
-   box-shadow:  4px 4px black;
-}
-.kyca{
-   background: url('../img/categories/centerforthearts_revised.png');
-   box-shadow:  4px 4px black;
-   background-position: center bottom;
-}
-.mercury{
-   background: url('../img/categories/mercury_revised.png');
-   box-shadow:  4px 4px black;
-}
-.dragway{
-   background: url('../img/categories/ohiovalley_revised.png');
-   box-shadow:  4px 4px black;
-}
-.palace{
-   background: url('../img/categories/palace_revised.png');
-   box-shadow:  4px 4px black;
-}
-.slugger{
-   background: url('../img/categories/slugger_revised.png');
-   box-shadow:  4px 4px black;
-}
-.gocards{
-   background: url('../img/categories/gocards_revised.png');
-   box-shadow:  4px 4px black;
-}
-.waterfront{
-   background: url('../img/categories/waterfront_revised.png');
-   box-shadow:  4px 4px black;
-}
-.mellwood{
-   background: url('../img/categories/mellwood_revised.png');
-   box-shadow:  4px 4px black;
-}
-.jbspeed{
-   background: url('../img/categories/jbspeed_revised.png');
-   box-shadow:  4px 4px black;
-}
-.waylon{
-   background: url('../img/categories/waylon_revised.png');
-   box-shadow:  4px 4px black;
-}
-.library{
-   background: url('../img/categories/library_revised.png');
-   box-shadow:  4px 4px black;
-}
+     .fourth{
+         background: url('../img/categories/4thstreetlive_revised.png');
+         box-shadow:  4px 4px black;
+    }
+     .churchill{
+         background: url('../img/categories/churchill.png');
+         box-shadow:  4px 4px black;
+    }
+    .comedy{
+        background: url('../img/categories/comedy_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .kfec{
+        background: url('../img/categories/KFEC_revised.png');
+
+        box-shadow:  4px 4px black;
+    }
+    .headliners{
+        background: url('../img/categories/headliners_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .amphi{
+        background: url('../img/categories/iroquois_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .yum{
+        background: url('../img/categories/yumcenter_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .kyca{
+        background: url('../img/categories/centerforthearts_revised.png');
+        box-shadow:  4px 4px black;
+        background-position: center bottom;
+      }
+
+    .mercury{
+        background: url('../img/categories/mercury_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .dragway{
+        background: url('../img/categories/ohiovalley_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .palace{
+        background: url('../img/categories/palace_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .slugger{
+        background: url('../img/categories/slugger_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .gocards{
+        background: url('../img/categories/gocards_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .waterfront{
+        background: url('../img/categories/waterfront_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .mellwood{
+        background: url('../img/categories/mellwood_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .jbspeed{
+        background: url('../img/categories/jbspeed_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .waylon{
+        background: url('../img/categories/waylon_revised.png');
+        box-shadow:  4px 4px black;
+    }
+    .library{
+        background: url('../img/categories/library_revised.png');
+        box-shadow:  4px 4px black;
+    }
 
 
-} /*-----end media queries------*/
+}
