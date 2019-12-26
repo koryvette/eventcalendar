@@ -1,25 +1,4 @@
 
-/* var imgs = new Array("img/papajohn_night_revised.jpg",
-                      "img/papajohn_revised.jpg",
-                      "img/nightbridge_revised.jpg",
-                      "img/redthunder_revised.jpg",
-                      "img/walkingbridge_revised.jpg",
-                      "img/4thstreet_revised.jpg",
-                      "img/skyline_day.jpg");
-
- function changeBg() {
-     var imgUrl = imgs[Math.floor(Math.random()*imgs.length)];
-     $('#banner').css('background-image', 'url(' + imgUrl + ')');
-     $('#banner').fadeIn(400); //this is new, will fade in smoothly
- }
-
- function changeBackgroundSmoothly() {
-     $('#banner').fadeOut(400, changeBg); //this is new, will fade out smoothly
- }
-
- setInterval(changeBackgroundSmoothly,5000);
-
- */
 
  $(document).ready(function(){
  var count = 0;
@@ -83,7 +62,7 @@ function mySearch(){
 }
  SEARCH function javascript */
 
-/* SEARCH function jquery */
+/* SEARCH function jquery TABLE view*/
 $(document).ready(function(){
      $('#search').keyup(function(){
           search_table($(this).val());
@@ -109,6 +88,31 @@ $(document).ready(function(){
      }
 });
 
+/* SEARCH function jquery TILE view*/
+$(document).ready(function(){
+     $('#search').keyup(function(){
+          search_table($(this).val());
+     });
+     function search_table(value){
+          $('#tileLayout .event-thumb').each(function(){
+               var found = 'false';
+               $(this).each(function(){
+                    if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                    {
+                         found = 'true';
+                    }
+               });
+               if(found == 'true')
+               {
+                    $(this).show();
+               }
+               else
+               {
+                    $(this).hide();
+               }
+          });
+     }
+});
 //  Pagination  //
 var numberOfItems = $('#tileLayout .event-thumb').length;
 var limitPerPage = 50;
