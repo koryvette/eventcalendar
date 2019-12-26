@@ -37985,6 +37985,8 @@ Enjoy your traditions (new and old!), then head over to Breakout Games to create
 <script type="text/javascript" src="script/LOU_JS.js"></script>
 <script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+
+//  View more details in Tile view //
   $(document).ready(function(){
     $('.quickview-title').click(function(){
       var $eventview = $(this).parent().parent().next();
@@ -38012,7 +38014,7 @@ Enjoy your traditions (new and old!), then head over to Breakout Games to create
     }
 } 
 
-
+// Switch from TILE view to TABLE view //
 function hideTable() {
   var x = document.getElementById("tileLayout");
    if (x.style.display === "none") {
@@ -38041,6 +38043,19 @@ $('.slick-slider').slick({
   nextArrow:$('.next'),
   prevArrow:$('.prev')
 });
+
+// remove fixed-top class header on small screens //
+$(window).bind("resize",function(){
+    console.log($(this).width())
+    if($(this).width() < 992){
+    $('.sticky').removeClass('fixed-top');
+    }
+    else{
+    $('.sticky').addClass('fixed-top');
+    }
+});
+
+
 </script>
 
 </body>
