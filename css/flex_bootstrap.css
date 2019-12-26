@@ -63,11 +63,7 @@ h4 {
    margin-bottom: 20px;
 }
 
-.sticky{
-  position: sticky;
-  -webkit-position: sticky;
-  top: 65px;
-}
+
 
 .nav-link:hover{
   transform: scale(1.5) rotate(-2deg);
@@ -522,7 +518,7 @@ section:target p{
 }
 
 .categories{
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content:  space-around;
   flex-wrap: wrap;
@@ -534,9 +530,14 @@ section:target p{
   .primary_list{
     order: -1;
   }
+}
+@media (max-width: 991px){
+  .post-slider{
+    display: none;
+  }
+
 
 }
-
 
 @media (min-width: 992px) {
 .container{
@@ -545,6 +546,12 @@ section:target p{
   padding: 0;
   margin:0;
 }
+
+  .sticky{
+    position: sticky;
+    -webkit-position: sticky;
+    top: 65px;
+  }
 
 .categories{
   flex-direction: column;
